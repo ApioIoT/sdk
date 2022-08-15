@@ -6,23 +6,23 @@ class Resource {
   }
 
   find (query, options = {}) {
-    return this.client.Get(this.basePath, query, options)
+    return this.client.Get({ path: this.basePath, query, options })
   }
 
   findById (uuid, options = {}) {
-    this.client.Get(`${this.basePath}/${uuid}`, {}, options)
+    this.client.Get({ path: `${this.basePath}/${uuid}`, options })
   }
 
   create (data, options = {}) {
-    this.client.Post(this.basePath, data, options)
+    this.client.Post({ path: this.basePath, data, options })
   }
 
   updateById (uuid, update, options = {}) {
-    this.client.Put(`${this.basePath}/${uuid}`, update, options)
+    this.client.Put({ path: `${this.basePath}/${uuid}`, update, options })
   }
 
   deleteById (uuid, options = {}) {
-    this.client.Delete(`${this.basePath}/${uuid}`, options)
+    this.client.Delete({ path: `${this.basePath}/${uuid}`, options })
   }
 }
 

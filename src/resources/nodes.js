@@ -2,9 +2,10 @@
 
 const { Resource } = require('./resource')
 class Node extends Resource {
-  constructor (client) {
+  constructor ({ client, overrides }) {
     super({
       client,
+      overrides,
       name: 'Nodes',
       basePath: '/nodes'
     })

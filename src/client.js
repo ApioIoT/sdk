@@ -13,11 +13,12 @@ class ApiError extends Error {
 
 class Client {
   constructor ({
-    apiBaseUrl = 'http://api.iot.apio.network',
+    apiBaseUrl = 'https://api.apio.network',
     apiKey,
     projectId,
     apiVersion = 'v1',
-    options
+    options,
+    resourceOverrides = {}
   }) {
     this.apiBaseUrl = apiBaseUrl
     this.apiKey = apiKey
@@ -26,17 +27,17 @@ class Client {
     this.options = options || defaultOptions
 
     for (const resourceName in resources) {
-      this[resourceName] = new resources[resourceName](this)
+      this[resourceName] = new resources[resourceName]({ client: this, overrides: resourceOverrides[resourceName] })
     }
   }
 
   async request (opts) {
     opts.headers = opts.headers || {}
-    opts.headers['User-Agent'] = 'ApioIoT/1.0 NodeJS'
+    opts.headers['User-Agent'] = 'ApioIoT/NodeJS'
     opts.headers['X-sdk-version'] = manifest.version
     opts.headers['X-sdk-variant'] = 'nodejs'
     if (!opts.headers.Authorization) {
-      opts.headers.authorization = this.apiKey
+      opts.headers.Authorization = this.apiKey
     }
     const response = await request(opts)
 
@@ -51,11 +52,48 @@ class Client {
     return response.body
   }
 
-  Get (path, query = {}, options = {}) {
+  Get ({ path, query = {}, options = {} }) {
     return this.request({
       method: 'GET',
+      headers: {
+        Authorization: `apikey ${this.apiKey}`
+      },
       url: `${this.apiBaseUrl}/projects/${this.projectId}${path}`,
-      query: query
+      query
+    })
+  }
+
+  Delete ({ path, query = {}, options = {} }) {
+    return this.request({
+      method: 'DELETE',
+      headers: {
+        Authorization: `apikey ${this.apiKey}`
+      },
+      url: `${this.apiBaseUrl}/projects/${this.projectId}${path}`,
+      query
+    })
+  }
+
+  Post ({ path, body = {}, options = {} }) {
+    return this.request({
+      method: 'POST',
+      headers: {
+        Authorization: `apikey ${this.apiKey}`
+      },
+      url: `${this.apiBaseUrl}/projects/${this.projectId}${path}`,
+      body
+    })
+  }
+
+  Put ({ path, body = {}, query = {}, options = {} }) {
+    return this.request({
+      method: 'PUT',
+      headers: {
+        Authorization: `apikey ${this.apiKey}`
+      },
+      url: `${this.apiBaseUrl}/projects/${this.projectId}${path}`,
+      body,
+      query
     })
   }
 }

@@ -1,14 +1,14 @@
 'use strict'
 
 const { Resource } = require('./resource')
-class Devices extends Resource {
+class Applications extends Resource {
   constructor ({ client, overrides = {} }) {
     super({
       client,
       overrides,
-      name: 'Devices',
-      basePath: '/devices'
+      name: 'Applications',
+      basePath: '/applications'
     })
   }
 }
-module.exports = Devices
+module.exports = Applications
