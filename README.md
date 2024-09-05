@@ -5,13 +5,13 @@ NodeJS sdk for Apio IoT Projects
 ## Installation
 
 ```
-npm i @apio/iot
+npm i @apio/sdk
 ```
 
 ## Usage
 
 ```typescript
-import Sdk, { Device } from 'apio-iot-sdk'
+import Sdk, { Device } from '@apio/sdk'
 
 const sdk = Sdk.create({
   uri: 'platform-uri',

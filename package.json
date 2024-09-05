@@ -1,5 +1,5 @@
 {
-  "name": "apio-iot-sdk",
+  "name": "@apio/sdk",
   "version": "2.0.0",
   "description": "",
   "main": "dist/index.js",
