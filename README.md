@@ -1,6 +1,6 @@
 # ApioIoT Sdk
 
-NodeJS sdk for Apio IoT Projects
+NodeJS SDK for Apio IoT Platform
 
 ## Installation
 
