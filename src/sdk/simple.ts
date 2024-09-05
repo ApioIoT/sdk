@@ -8,7 +8,7 @@ import { getPlant, getPlants } from '../resources/plant'
 import { getAssetType, getAssetTypes } from '../resources/assetType'
 import { getNodeType, getNodeTypes } from '../resources/nodeType'
 
-import { Asset, AssetType, Device, DeviceType, Node, NodeType, Plant } from '../types/types'
+import { Asset, AssetType, Device, DeviceType, Node, NodeType, Plant } from '../../index'
 
 class SimpleSdk extends Sdk {
   getAssets(): Promise<Array<Asset> | never> {

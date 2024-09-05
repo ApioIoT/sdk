@@ -1,5 +1,5 @@
 import { AxiosInstance } from 'axios'
-import { ApioResponse, Device } from '../types/types'
+import { ApioResponse, Device } from '../../index'
 import { handleException } from '../utils'
 
 export async function getDevices(client: AxiosInstance): Promise<Array<Device> | never> {

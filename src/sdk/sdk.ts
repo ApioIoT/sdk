@@ -1,17 +1,6 @@
 import axios, { AxiosInstance } from 'axios'
 
-import { Asset, AssetType, Device, DeviceType, Node, NodeType, Plant } from '../types/types'
-
-export type Configuration = {
-  baseUri: string,
-  apiKey?: string,
-  projectId: string,
-  timeout?: number,
-  cache?: {
-    max?: number
-    ttl?: number
-  } | boolean
-}
+import { Asset, AssetType, Configuration, Device, DeviceType, Node, NodeType, Plant } from '../../index'
 
 abstract class Sdk {
   protected client: AxiosInstance

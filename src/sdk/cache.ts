@@ -1,4 +1,4 @@
-import Sdk, { Configuration } from './sdk'
+import Sdk from './sdk'
 
 import { AxiosInstance } from 'axios'
 import { LRUCache } from 'lru-cache'
@@ -11,7 +11,7 @@ import { getPlant, getPlants } from '../resources/plant'
 import { getAssetType, getAssetTypes } from '../resources/assetType'
 import { getNodeType, getNodeTypes } from '../resources/nodeType'
 
-import { Asset, AssetType, Device, DeviceType, Node, NodeType, Plant } from '../types/types'
+import { Asset, AssetType, Configuration, Device, DeviceType, Node, NodeType, Plant } from '../../index'
 
 type UnionType = Asset | AssetType | Device | DeviceType | Node | NodeType | Plant
 type FnType = ((client: AxiosInstance) => Promise<UnionType | Array<UnionType> | never>)

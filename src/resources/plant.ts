@@ -1,5 +1,5 @@
 import { AxiosInstance } from 'axios'
-import { ApioResponse, Plant } from '../types/types'
+import { ApioResponse, Plant } from '../../index'
 import { handleException } from '../utils'
 
 export async function getPlants(client: AxiosInstance): Promise<Array<Plant> | never> {
