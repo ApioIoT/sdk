@@ -26,7 +26,7 @@ export type DeviceType = components['schemas']['DeviceType']
 export type NodeType = components['schemas']['NodeType']
 
 export type Configuration = {
-  baseUri: string,
+  uri: string,
   apiKey?: string,
   projectId: string,
   timeout?: number,

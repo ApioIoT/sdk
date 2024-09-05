@@ -5,7 +5,7 @@ import Sdk from '../index'
 import { AuthenticationError, ConfigurationError, NotFoundError } from '../index'
 
 const sdk = Sdk.create({
-  baseUri: process.env.BASE_URI!,
+  uri: process.env.BASE_URI!,
   apiKey: process.env.API_KEY!,
   projectId: process.env.PROJECT_ID!
 })
@@ -13,7 +13,7 @@ const sdk = Sdk.create({
 describe('Testing SDK', () => {
   test('test ConfigurationError', async () => {
     const sdk = Sdk.create({
-      baseUri: 'asd',
+      uri: 'asd',
       apiKey: process.env.API_KEY!,
       projectId: process.env.PROJECT_ID!
     })
@@ -25,7 +25,7 @@ describe('Testing SDK', () => {
 
   test('test AuthenticationError', async () => {
     const sdk = Sdk.create({
-      baseUri: process.env.BASE_URI!,
+      uri: process.env.BASE_URI!,
       apiKey: 'lol',
       projectId: process.env.PROJECT_ID!
     })

@@ -7,7 +7,7 @@ abstract class Sdk {
 
   constructor(config: Configuration) {
     this.client = axios.create({
-      baseURL: [config.baseUri, '/projects/', config.projectId].join('') ,
+      baseURL: [config.uri, '/projects/', config.projectId].join('') ,
       headers: {
         Authorization: config.apiKey ? `apiKey ${config.apiKey}` : undefined
       },
