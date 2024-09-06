@@ -1,8 +1,8 @@
 import 'dotenv/config'
 
-import Sdk from '../index'
+import Sdk from '../src/sdk'
 
-import { AuthenticationError, ConfigurationError, NotFoundError } from '../index'
+import { AuthenticationError, ConfigurationError, NotFoundError } from '../src/types/types'
 
 const sdk = Sdk.create({
   uri: process.env.BASE_URI!,
@@ -18,7 +18,7 @@ describe('Testing SDK', () => {
       projectId: process.env.PROJECT_ID!
     })
 
-    await expect(sdk.getNodes())
+    await expect(sdk.node.findAll())
       .rejects
       .toThrow(ConfigurationError)
   })
@@ -30,61 +30,61 @@ describe('Testing SDK', () => {
       projectId: process.env.PROJECT_ID!
     })
 
-    await expect(sdk.getNodes())
+    await expect(sdk.node.findAll())
       .rejects
       .toThrow(AuthenticationError)
   })
 
   test('get nodes', async () => {
-    await expect(sdk.getNodes())
+    await expect(sdk.node.findAll())
       .resolves
       .toBeInstanceOf(Array)
   })
 
   test('get node', async () => {
-    await expect(sdk.getNode(process.env.TEST_NODE_UUID!))
+    await expect(sdk.node.findById(process.env.TEST_NODE_UUID!))
       .resolves
       .toHaveProperty('uuid', process.env.TEST_NODE_UUID!)
   })
 
   test('get fake node', async () => {
-    await expect(sdk.getNode('123'))
+    await expect(sdk.node.findById('123'))
       .rejects
       .toThrow(NotFoundError)
   })
 
   test('get devices', async () => {
-    await expect(sdk.getDevices())
+    await expect(sdk.device.findAll())
       .resolves
       .toBeInstanceOf(Array)
   })
-  
+
   test('get device', async () => {
-    await expect(sdk.getDevice(process.env.TEST_DEVICE_UUID!))
+    await expect(sdk.device.findById(process.env.TEST_DEVICE_UUID!))
       .resolves
       .toHaveProperty('uuid', process.env.TEST_DEVICE_UUID!)
   })
 
   test('get fake device', async () => {
-    await expect(sdk.getDevice('123'))
+    await expect(sdk.device.findById('123'))
       .rejects
       .toThrow(NotFoundError)
   })
 
   test('get device types', async () => {
-    await expect(sdk.getDeviceTypes())
+    await expect(sdk.deviceType.findAll())
       .resolves
       .toBeInstanceOf(Array)
   })
- 
+
   test('get device type', async () => {
-    await expect(sdk.getDeviceType(process.env.TEST_DEVICE_TYPE_UUID!))
+    await expect(sdk.deviceType.findById(process.env.TEST_DEVICE_TYPE_UUID!))
       .resolves
       .toHaveProperty('uuid', process.env.TEST_DEVICE_TYPE_UUID!)
   })
 
   test('get fake device type', async () => {
-    await expect(sdk.getDeviceType('123'))
+    await expect(sdk.deviceType.findById('123'))
       .rejects
       .toThrow(NotFoundError)
   })

@@ -3,7 +3,7 @@
     "target": "es6",
     "module": "commonjs",
     "lib": [
-      "es2020"
+      "es6"
     ],
     "declaration": true,
     "declarationMap": true,
@@ -14,12 +14,11 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
+    "forceConsistentCasingInFileNames": true
   },
   "include": [
-    "index.ts",
     "src/**/*",
-    "tests/sdk.test.ts",
+    "tests/**/*"
   ],
   "exclude": [
     "node_modules"

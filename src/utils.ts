@@ -1,7 +1,7 @@
 import { AxiosError } from 'axios'
-import { AuthenticationError, ConfigurationError, NotFoundError, SystemError } from '../index'
+import { AuthenticationError, ConfigurationError, NotFoundError, SystemError } from './types/types'
 
-export function handleException (e: Error): never {
+export function handleException (e: unknown): never {
   if (e instanceof AxiosError) {
     switch (e.status) {
       case 401:
@@ -15,12 +15,17 @@ export function handleException (e: Error): never {
     switch (e.code) {
       case 'ENOTFOUND':
         throw new ConfigurationError(e.message)
+      case 'ERR_INVALID_URL':
+        throw new ConfigurationError(e.message)
     }
-  }
 
-  if (e.name === 'TypeError') {
     throw new ConfigurationError(e.message)
   }
-  
+
+  const _e = e as Error
+  if (_e.name === 'TypeError') {
+    throw new ConfigurationError(_e.message)
+  }
+
   throw e
 }

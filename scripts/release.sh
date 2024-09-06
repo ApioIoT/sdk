@@ -9,8 +9,8 @@
 # Calculating the new version requires to know which kind of update this is
 # The default version increment is patch
 # Used values: major|minor|patch where in x.y.z :
-# major=x  
-# minor=y 
+# major=x
+# minor=y
 # patch=z
 
 if [ -z "$1" ]
