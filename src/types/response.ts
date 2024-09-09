@@ -47,7 +47,7 @@ export interface Asset {
   /**
    * The project this resource belongs to.
    * @type {string}
-   * @memberof Asset
+   * @memberof Assetqq
    */
   projectId: string;
   /**

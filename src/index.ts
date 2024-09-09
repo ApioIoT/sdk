@@ -1,7 +1,6 @@
-import Sdk, { Configuration } from './sdk'
-
-export * from './types/generated'
-export * from './types/types'
+import Sdk, { Configuration } from './sdk/sdk'
 export { Configuration }
+
+export * from './types'
 
 export default Sdk

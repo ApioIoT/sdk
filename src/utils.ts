@@ -1,5 +1,5 @@
 import { AxiosError } from 'axios'
-import { AuthenticationError, ConfigurationError, NotFoundError, SystemError } from './types/types'
+import { AuthenticationError, ConfigurationError, NotFoundError, SystemError } from './types'
 
 export function handleException (e: unknown): never {
   if (e instanceof AxiosError) {

@@ -1,8 +1,8 @@
 import 'dotenv/config'
 
-import Sdk from '../src/sdk'
+import Sdk from '../src/sdk/sdk'
 
-import { AuthenticationError, ConfigurationError, NotFoundError } from '../src/types/types'
+import { AuthenticationError, ConfigurationError, NotFoundError } from '../src/types'
 
 const sdk = Sdk.create({
   uri: process.env.BASE_URI!,
