@@ -1,8 +1,8 @@
-import { AxiosInstance } from 'axios'
+import { AxiosInstance, AxiosResponse } from 'axios'
 import { handleException } from '../utils'
-import { ApioResponse } from '../types'
+import { ApioResponse, BaseResponse } from '../types'
 
-abstract class Resource<T, K extends T> {
+abstract class Resource<T, K extends BaseResponse> {
   private client: AxiosInstance
   private path: string
 
@@ -30,15 +30,28 @@ abstract class Resource<T, K extends T> {
   }
 
   async create (data: T): Promise<string | never> {
-    throw new Error('Unimplemented method')
+    try {
+      const { data: dataRes } = await this.client.post<object, AxiosResponse<ApioResponse<K>>, T>(this.path, data)
+      return dataRes.data!.uuid
+    } catch (e) {
+      handleException(e)
+    }
   }
 
-  async updateById (uuid: string, data: T): Promise<boolean | never> {
-    throw new Error('Unimplemented method')
+  async updateById (uuid: string, data: T): Promise<undefined | never> {
+    try {
+      await this.client.put(`${this.path}/${uuid}`, data)
+    } catch (e) {
+      handleException(e)
+    }
   }
 
-  async deleteById (uuid: string): Promise<boolean | never> {
-    throw new Error('Unimplemented method')
+  async deleteById (uuid: string): Promise<undefined | never> {
+    try {
+      await this.client.delete(`${this.path}/${uuid}`)
+    } catch (e) {
+      handleException(e)
+    }
   }
 }
 

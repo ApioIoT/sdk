@@ -11,3 +11,7 @@ export type ApioResponse<T> = {
     message?: string
   }
 }
+
+export interface BaseResponse {
+  uuid: string
+}
