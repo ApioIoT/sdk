@@ -2,7 +2,7 @@ import { AxiosInstance } from 'axios'
 import { handleException } from '../utils'
 import { ApioResponse } from '../types'
 
-export class Resource<T, K extends T> {
+abstract class Resource<T, K extends T> {
   private client: AxiosInstance
   private path: string
 

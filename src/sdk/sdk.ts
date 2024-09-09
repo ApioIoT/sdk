@@ -2,8 +2,24 @@ import axios from 'axios'
 import { setupCache } from 'axios-cache-interceptor'
 
 import Resource from '../resources/resource'
+import BaseResource from '../resources/base'
 
-import { Asset, AssetType, Device, DeviceType, NewAsset, NewAssetType, NewDevice, NewDeviceType, NewNode, NewNodeType, NewPlant, Node, NodeType, Plant } from '../types'
+import { 
+  Asset, 
+  AssetType, 
+  Device, 
+  DeviceType, 
+  NewAsset,
+  NewAssetType, 
+  NewDevice, 
+  NewDeviceType, 
+  NewNode, 
+  NewNodeType, 
+  NewPlant, 
+  Node, 
+  NodeType, 
+  Plant 
+} from '../types'
 
 export type Configuration = {
   uri: string,
@@ -35,13 +51,13 @@ class Sdk {
       client = setupCache(client)
     }
 
-    this.assetType = new Resource(client, 'assetTypes')
-    this.asset = new Resource(client, 'assets')
-    this.device = new Resource(client, 'devices')
-    this.deviceType = new Resource(client, 'deviceTypes')
-    this.node = new Resource(client, 'nodes')
-    this.nodeType = new Resource(client, 'nodetypes')
-    this.plant = new Resource(client, 'plants')
+    this.assetType = new BaseResource(client, 'assetTypes')
+    this.asset = new BaseResource(client, 'assets')
+    this.device = new BaseResource(client, 'devices')
+    this.deviceType = new BaseResource(client, 'deviceTypes')
+    this.node = new BaseResource(client, 'nodes')
+    this.nodeType = new BaseResource(client, 'nodetypes')
+    this.plant = new BaseResource(client, 'plants')
   }
 
   static create(config: Configuration): Sdk {
