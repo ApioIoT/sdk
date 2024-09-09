@@ -11,7 +11,7 @@ abstract class Resource<T, K extends BaseResponse> {
     this.path = path
   }
 
-  async findAll (): Promise<Array<K> | never> {
+  async findAll(): Promise<Array<K> | never> {
     try {
       const { data } = await this.client.get<ApioResponse<Array<K>>>(this.path)
       return data.data!
@@ -20,7 +20,7 @@ abstract class Resource<T, K extends BaseResponse> {
     }
   }
 
-  async findById (uuid: string): Promise<K | never> {
+  async findById(uuid: string): Promise<K | never> {
     try {
       const { data } = await this.client.get<ApioResponse<K>>(`${this.path}/${uuid}`)
       return data.data!
@@ -29,7 +29,7 @@ abstract class Resource<T, K extends BaseResponse> {
     }
   }
 
-  async create (data: T): Promise<string | never> {
+  async create(data: T): Promise<string | never> {
     try {
       const { data: dataRes } = await this.client.post<object, AxiosResponse<ApioResponse<K>>, T>(this.path, data)
       return dataRes.data!.uuid
@@ -38,7 +38,7 @@ abstract class Resource<T, K extends BaseResponse> {
     }
   }
 
-  async updateById (uuid: string, data: T): Promise<undefined | never> {
+  async updateById(uuid: string, data: T): Promise<undefined | never> {
     try {
       await this.client.put(`${this.path}/${uuid}`, data)
     } catch (e) {
@@ -46,7 +46,7 @@ abstract class Resource<T, K extends BaseResponse> {
     }
   }
 
-  async deleteById (uuid: string): Promise<undefined | never> {
+  async deleteById(uuid: string): Promise<undefined | never> {
     try {
       await this.client.delete(`${this.path}/${uuid}`)
     } catch (e) {
