@@ -11,7 +11,7 @@ import NodeResources from './resources/node'
 import NodeTypesResources from './resources/nodeType'
 import PlantResources from './resources/plant'
 
-import { Asset, AssetType, Device, DeviceType, Node, NodeType, Plant } from './types/types'
+import { Asset, AssetType, Device, DeviceType, Node, NodeType, Plant } from './types/generated'
 
 export type Configuration = {
   uri: string,

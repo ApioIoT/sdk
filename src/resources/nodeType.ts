@@ -1,5 +1,6 @@
 import Resource from '../resource'
-import { ApioResponse, NodeType } from '../types/types'
+import { NodeType } from '../types/generated'
+import { ApioResponse } from '../types/types'
 import { handleException } from '../utils'
 
 class NodeTypesResources extends Resource<NodeType> {

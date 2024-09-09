@@ -1,5 +1,6 @@
 import Resource from '../resource'
-import { ApioResponse, Device } from '../types/types'
+import { Device } from '../types/generated'
+import { ApioResponse } from '../types/types'
 import { handleException } from '../utils'
 
 class DeviceResources extends Resource<Device> {
