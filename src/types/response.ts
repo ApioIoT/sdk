@@ -25,19 +25,19 @@ export interface Asset {
    * @type {string}
    * @memberof Asset
    */
-  uuid?: string;
+  uuid: string;
   /**
    * The date (and time) at which the resource was created.
    * @type {Date}
    * @memberof Asset
    */
-  createdAt?: Date;
+  createdAt: Date;
   /**
    * The date (and time) at which the resource was updated last time.
    * @type {Date}
    * @memberof Asset
    */
-  updatedAt?: Date;
+  updatedAt: Date;
   /**
    * A map of strings with custom content
    * @type {{ [key: string]: string; }}
@@ -94,19 +94,19 @@ export interface Device {
    * @type {string}
    * @memberof Device
    */
-  uuid?: string;
+  uuid: string;
   /**
    * The date (and time) at which the resource was created.
    * @type {Date}
    * @memberof Device
    */
-  createdAt?: Date;
+  createdAt: Date;
   /**
    * The date (and time) at which the resource was updated last time.
    * @type {Date}
    * @memberof Device
    */
-  updatedAt?: Date;
+  updatedAt: Date;
   /**
    * A map of strings with custom content
    * @type {{ [key: string]: string; }}
@@ -187,19 +187,19 @@ export interface Node {
    * @type {string}
    * @memberof Node
    */
-  uuid?: string;
+  uuid: string;
   /**
    * The date (and time) at which the resource was created.
    * @type {Date}
    * @memberof Node
    */
-  createdAt?: Date;
+  createdAt: Date;
   /**
    * The date (and time) at which the resource was updated last time.
    * @type {Date}
    * @memberof Node
    */
-  updatedAt?: Date;
+  updatedAt: Date;
   /**
    * A map of strings with custom content
    * @type {{ [key: string]: string; }}
@@ -276,19 +276,19 @@ export interface Plant {
    * @type {string}
    * @memberof Plant
    */
-  uuid?: string;
+  uuid: string;
   /**
    * The date (and time) at which the resource was created.
    * @type {Date}
    * @memberof Plant
    */
-  createdAt?: Date;
+  createdAt: Date;
   /**
    * The date (and time) at which the resource was updated last time.
    * @type {Date}
    * @memberof Plant
    */
-  updatedAt?: Date;
+  updatedAt: Date;
   /**
    * A map of strings with custom content
    * @type {{ [key: string]: string; }}
@@ -333,19 +333,19 @@ export interface AssetType {
    * @type {string}
    * @memberof AssetType
    */
-  uuid?: string;
+  uuid: string;
   /**
    * The date (and time) at which the resource was created.
    * @type {Date}
    * @memberof AssetType
    */
-  createdAt?: Date;
+  createdAt: Date;
   /**
    * The date (and time) at which the resource was updated last time.
    * @type {Date}
    * @memberof AssetType
    */
-  updatedAt?: Date;
+  updatedAt: Date;
   /**
    * A map of strings with custom content
    * @type {{ [key: string]: string; }}
@@ -432,19 +432,19 @@ export interface DeviceType {
    * @type {string}
    * @memberof DeviceType
    */
-  uuid?: string;
+  uuid: string;
   /**
    * The date (and time) at which the resource was created.
    * @type {Date}
    * @memberof DeviceType
    */
-  createdAt?: Date;
+  createdAt: Date;
   /**
    * The date (and time) at which the resource was updated last time.
    * @type {Date}
    * @memberof DeviceType
    */
-  updatedAt?: Date;
+  updatedAt: Date;
   /**
    * A map of strings with custom content
    * @type {{ [key: string]: string; }}
@@ -513,19 +513,19 @@ export interface NodeType {
    * @type {string}
    * @memberof NodeType
    */
-  uuid?: string;
+  uuid: string;
   /**
    * The date (and time) at which the resource was created.
    * @type {Date}
    * @memberof NodeType
    */
-  createdAt?: Date;
+  createdAt: Date;
   /**
    * The date (and time) at which the resource was updated last time.
    * @type {Date}
    * @memberof NodeType
    */
-  updatedAt?: Date;
+  updatedAt: Date;
   /**
    * A map of strings with custom content
    * @type {{ [key: string]: string; }}
