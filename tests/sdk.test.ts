@@ -2,7 +2,7 @@ import 'dotenv/config'
 
 import Sdk from '../src/sdk/sdk'
 
-import { AuthenticationError, ConfigurationError, NotFoundError } from '../src/types'
+import { AuthenticationError, ConfigurationError, NotFoundError, AbortError } from '../src/types'
 
 const sdk = Sdk.create({
   uri: process.env.BASE_URI!,
@@ -87,5 +87,48 @@ describe('Testing SDK', () => {
     await expect(sdk.deviceType.findById('123'))
       .rejects
       .toThrow(NotFoundError)
+  })
+
+  test('test Timeout', async () => {
+    const sdk = Sdk.create({
+      uri: process.env.BASE_URI!,
+      apiKey: 'lol',
+      projectId: process.env.PROJECT_ID!,
+      timeout: 1
+    })
+
+    await expect(sdk.node.findAll())
+      .rejects
+      .toThrow(AbortError)
+  })
+
+  test('test Cancellation with timeout', async () => {
+    const sdk = Sdk.create({
+      uri: process.env.BASE_URI!,
+      apiKey: 'lol',
+      projectId: process.env.PROJECT_ID!,
+      signal: AbortSignal.timeout(1)
+    })
+
+    await expect(sdk.node.findAll())
+      .rejects
+      .toThrow(AbortError)
+  })
+
+  test('test Cancellation with abort', async () => {
+    const controller = new AbortController()
+    
+    const sdk = Sdk.create({
+      uri: process.env.BASE_URI!,
+      apiKey: 'lol',
+      projectId: process.env.PROJECT_ID!,
+      signal: controller.signal
+    })
+
+    controller.abort()
+
+    await expect(sdk.node.findAll())
+      .rejects
+      .toThrow(AbortError)
   })
 })

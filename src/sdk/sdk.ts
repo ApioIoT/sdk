@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios, { GenericAbortSignal } from 'axios'
 import { setupCache } from 'axios-cache-interceptor'
 
 import Resource from '../resources/resource'
@@ -25,8 +25,9 @@ export type Configuration = {
   uri: string,
   apiKey?: string,
   projectId: string,
+  cache?: boolean,
   timeout?: number,
-  cache?: boolean
+  signal?: GenericAbortSignal
 }
 
 class Sdk {
@@ -41,10 +42,11 @@ class Sdk {
   private constructor(config: Configuration) {
     let client = axios.create({
       baseURL: [config.uri, '/projects/', config.projectId].join('') ,
-      headers: {
-        Authorization: config.apiKey ? `apiKey ${config.apiKey}` : undefined
-      },
-      timeout: config.timeout
+      headers: config.apiKey 
+        ? { Authorization: `apiKey ${config.apiKey}` } 
+        : {},
+      timeout: config.timeout,
+      signal: config.signal
     })
 
     if (config.cache) {

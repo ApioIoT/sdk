@@ -1,5 +1,5 @@
 import { AxiosError } from 'axios'
-import { AuthenticationError, ConfigurationError, NotFoundError, SystemError } from './types'
+import { AuthenticationError, ConfigurationError, NotFoundError, SystemError, AbortError } from './types'
 
 export function handleException (e: unknown): never {
   if (e instanceof AxiosError) {
@@ -17,6 +17,10 @@ export function handleException (e: unknown): never {
         throw new ConfigurationError(e.message)
       case 'ERR_INVALID_URL':
         throw new ConfigurationError(e.message)
+      case 'ECONNABORTED':
+        throw new AbortError(e.message)
+      case 'ERR_CANCELED':
+        throw new AbortError(e.message)
     }
 
     throw new ConfigurationError(e.message)
