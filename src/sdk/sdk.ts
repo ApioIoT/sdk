@@ -25,7 +25,7 @@ export type Configuration = {
   uri: string,
   apiKey?: string,
   projectId: string,
-  cache?: boolean,
+  cache?: boolean | { ttl: number },
   timeout?: number,
   signal?: GenericAbortSignal
 }
@@ -50,7 +50,7 @@ class Sdk {
     })
 
     if (config.cache) {
-      client = setupCache(client)
+      client = setupCache(client, typeof config.cache === 'object' ? config.cache : undefined)
     }
 
     this.assetType = new BaseResource(client, 'assetTypes')

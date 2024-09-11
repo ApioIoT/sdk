@@ -39,6 +39,6 @@ const sdk = Sdk.create({
   uri: 'platform-uri',
   apiKey: 'your-api-key',
   projectId: 'your-project-id'
-  cache: true
+  cache: true // For default configuration. Otherwise: { ttl: number }
 })
 ```
