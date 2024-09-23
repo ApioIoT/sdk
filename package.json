@@ -1,6 +1,6 @@
 {
   "name": "@apio/sdk",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "NodeJS SDK for Apio IoT Platform",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",

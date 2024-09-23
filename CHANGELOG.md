@@ -1,3 +1,7 @@
+# 📦 2.1.0 (11 Sep 2024)
+- [7e690](https://github.com/ApioIoT/sdk/commit/7e69076c85bfe6ff0da5aef1ef50841a9e84c591)  📦 Release 2.1.0 [skip ci]
+- [4b749](https://github.com/ApioIoT/sdk/commit/4b74943894e962da984a4104a7a3d6f1b61d7bf4)  feat: manual update known types
+- [13fc9](https://github.com/ApioIoT/sdk/commit/13fc93e56ffc45502b4945b8dbf6a17b027680cf)  feat: add cache config
 # 📦 2.0.1 (10 Sep 2024)
 - [cccee](https://github.com/ApioIoT/sdk/commit/cccee0dc29895745a6ac43d0d7fe80945572ebfd)  📦 Release 2.0.1 [skip ci]
 - [b1348](https://github.com/ApioIoT/sdk/commit/b1348b851fd4ff688b020a9f0699306e66d11bf7)  feat: add request cancellation and fix undefined apikey
