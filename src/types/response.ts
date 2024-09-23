@@ -124,15 +124,18 @@ export const NodeConnectivityStatusEnum = {
 } as const
 export type NodeConnectivityStatusEnum = typeof NodeConnectivityStatusEnum[keyof typeof NodeConnectivityStatusEnum];
 
-type NodeProtocol = {
-  uuid: string
-  name: 'modbus'
-  description: string
-  metadata: object
+type KnxProtocol = {
+  name: 'knx'
   configuration: {
-    type: 'tcp' | 'udp'
     ip: string
     port: number
+    physAddr: string
+  }
+}
+
+type ModbusProtocol = {
+  name: 'modbus'
+  configuration: (ModbusTcpConfiguration | ModbusRtuConfiguration) & {
     readingFrequency: number | 'onchange'
     cloudFrequency: number | 'onchange'
     edgeFrequency: number | 'onchange'
@@ -145,6 +148,27 @@ type NodeProtocol = {
     }
   >
 }
+
+type ModbusTcpConfiguration = {
+  type: 'tcp' | 'udp'
+  ip: string
+  port: number
+}
+
+type ModbusRtuConfiguration = {
+  type: 'rtu'
+  dev: string
+  baudRate: number
+  dataBits: number
+  stopBits: number
+  parity: 'none' | 'even' | 'odd'
+}
+
+type NodeProtocol = {
+  uuid: string
+  description?: string
+  metadata?: object
+} & (ModbusProtocol | KnxProtocol)
 
 export type Node = {
   uuid: string
