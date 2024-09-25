@@ -1,3 +1,6 @@
+import { KnxDeviceTypeProtocol, KnxNodeProtocol } from './protocols/knx'
+import { ModbusDeviceTypeProtocol, ModbusNodeProtocol } from './protocols/modbus'
+
 export const LocationPointTypeEnum = {
   Point: 'point'
 } as const
@@ -113,7 +116,7 @@ export type Device = {
   connectivityStatus: string
   lastConnectionAt: string
   lastDisconnectionAt: string
-  tags: ReadonlyArray<string>
+  tags: Array<string>
   createdAt: Date
   updatedAt: Date
 }
@@ -124,51 +127,11 @@ export const NodeConnectivityStatusEnum = {
 } as const
 export type NodeConnectivityStatusEnum = typeof NodeConnectivityStatusEnum[keyof typeof NodeConnectivityStatusEnum];
 
-type KnxProtocol = {
-  name: 'knx'
-  configuration: {
-    ip: string
-    port: number
-    physAddr: string
-  }
-}
-
-type ModbusProtocol = {
-  name: 'modbus'
-  configuration: (ModbusTcpConfiguration | ModbusRtuConfiguration) & {
-    readingFrequency: number | 'onchange'
-    cloudFrequency: number | 'onchange'
-    edgeFrequency: number | 'onchange'
-  }
-  mapping: Record<
-    string,
-    {
-      address: number
-      properties: ReadonlyArray<string>
-    }
-  >
-}
-
-type ModbusTcpConfiguration = {
-  type: 'tcp' | 'udp'
-  ip: string
-  port: number
-}
-
-type ModbusRtuConfiguration = {
-  type: 'rtu'
-  dev: string
-  baudRate: number
-  dataBits: number
-  stopBits: number
-  parity: 'none' | 'even' | 'odd'
-}
-
-type NodeProtocol = {
+export type NodeProtocol = {
   uuid: string
   description?: string
   metadata?: object
-} & (ModbusProtocol | KnxProtocol)
+} & (ModbusNodeProtocol | KnxNodeProtocol)
 
 export type Node = {
   uuid: string
@@ -182,14 +145,14 @@ export type Node = {
     latitude: number
     longitude: number
   }
-  protocols?: ReadonlyArray<NodeProtocol>
+  protocols?: Array<NodeProtocol>
   metadata: object
   connectivityStatus: string
   lastConnectionAt: string
   lastCommunicationAt: string
   lastDisconnectionAt: string
   description: string
-  tags: ReadonlyArray<string>
+  tags: Array<string>
   createdAt: Date
   updatedAt: Date
 }
@@ -377,25 +340,15 @@ export type DeviceType = {
   encoder: string
   decoder: string
   firmwareID: string
-  firmwareVersions: ReadonlyArray<string>
+  firmwareVersions: Array<string>
   model: string
   manufacturer: string
   category: string
   name: string
   description: string
   protocols?: {
-    modbus?: {
-      registers: ReadonlyArray<{
-        register: number
-        modbusFunction: number
-        words: number
-        properties: ReadonlyArray<{
-          index: number
-          name: string
-        }>
-        type: string
-      }>
-    }
+    modbus?: ModbusDeviceTypeProtocol
+    knx?: KnxDeviceTypeProtocol
   }
   metadata: object
   commands: object
