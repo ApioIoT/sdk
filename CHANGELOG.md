@@ -1,3 +1,5 @@
+# 📦 2.1.2 (23 Sep 2024)
+- [034b3](https://github.com/ApioIoT/sdk/commit/034b32c2a4b85f2b90342aba596d7bc457329ba6)  📦 Release 2.1.2 [skip ci]
 # 📦 2.1.1 (23 Sep 2024)
 - [17350](https://github.com/ApioIoT/sdk/commit/173508d750e3e191f477bdd9f0aed7a13df4393c)  📦 Release 2.1.1 [skip ci]
 - [c1509](https://github.com/ApioIoT/sdk/commit/c15097abc021484d0be55adec538ab432c3a9c1a)  chore: add knx node protocols
