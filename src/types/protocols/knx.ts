@@ -6,21 +6,18 @@ export type KnxNodeProtocol = {
     physAddr: string
     mapping?: Record<
       string,
-      Record<
-        string,
-        {
-          send: string
-          receive: string
-        }
-      >
+      {
+        address: string
+        properties: Record<
+          string,
+          {
+            send: string
+            sendDPT: string
+            receive: string
+            receiveDPT: string
+          }
+        >
+      }
     >
   }
-}
-
-export type KnxDeviceTypeProtocol = {
-  properties: Record<string, {
-    address: string
-    sendDPT: string
-    receiveDPT: string
-  }>
 }

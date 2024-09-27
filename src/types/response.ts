@@ -1,4 +1,4 @@
-import { KnxDeviceTypeProtocol, KnxNodeProtocol } from './protocols/knx'
+import { KnxNodeProtocol } from './protocols/knx'
 import { ModbusDeviceTypeProtocol, ModbusNodeProtocol } from './protocols/modbus'
 
 export const LocationPointTypeEnum = {
@@ -348,7 +348,6 @@ export type DeviceType = {
   description: string
   protocols?: {
     modbus?: ModbusDeviceTypeProtocol
-    knx?: KnxDeviceTypeProtocol
   }
   metadata: object
   commands: object
