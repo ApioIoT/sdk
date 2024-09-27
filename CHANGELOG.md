@@ -1,3 +1,6 @@
+# 📦 2.1.3 (25 Sep 2024)
+- [de8eb](https://github.com/ApioIoT/sdk/commit/de8ebbb5c796fbffedf3dc29ede6794c3f163532)  📦 Release 2.1.3 [skip ci]
+- [4a941](https://github.com/ApioIoT/sdk/commit/4a94165eaa2433944be07e5d4a9987cef9702213)  chore: fix knx types
 # 📦 2.1.2 (23 Sep 2024)
 - [034b3](https://github.com/ApioIoT/sdk/commit/034b32c2a4b85f2b90342aba596d7bc457329ba6)  📦 Release 2.1.2 [skip ci]
 # 📦 2.1.1 (23 Sep 2024)
