@@ -24,14 +24,16 @@ export type ModbusNodeProtocol = {
 }
 
 export type ModbusDeviceTypeProtocol = {
+  endianness: 'ABCD' | 'CDAB' | 'BADC' | 'DCBA'
   registers: Array<{
+    type?: 'uint' | 'int' | 'float' | 'double'
     register: number
     modbusFunction: number
-    words: number
+    words?: number
+    bitwiseReading: boolean
     properties: Array<{
       index: number
       name: string
     }>
-    type: string
   }>
 }
