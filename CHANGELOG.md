@@ -1,3 +1,6 @@
+# 📦 2.1.5 (16 Oct 2024)
+- [7518d](https://github.com/ApioIoT/sdk/commit/7518d59b64adea7ccb7ee239c5f216ae17500478)  📦 Release 2.1.5 [skip ci]
+- [cba68](https://github.com/ApioIoT/sdk/commit/cba68b09e5513e44903fa20e229aef18b28386e7)  feat: upgrade modbus protocol
 # 📦 2.1.4 (27 Sep 2024)
 - [6c768](https://github.com/ApioIoT/sdk/commit/6c768b724267227dc3ec15c3faa307d86fbc9c4f)  📦 Release 2.1.4 [skip ci]
 - [87f63](https://github.com/ApioIoT/sdk/commit/87f63b3820d3c7b366269bd527f1c17d7c57c0d7)  refactor: fix knx protocol
