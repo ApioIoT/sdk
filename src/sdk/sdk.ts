@@ -1,4 +1,4 @@
-import axios, { GenericAbortSignal } from 'axios'
+import axios, { AxiosInstance, GenericAbortSignal } from 'axios'
 import { setupCache } from 'axios-cache-interceptor'
 
 import Resource from '../resources/resource'
@@ -18,8 +18,12 @@ import {
   NewPlant, 
   Node, 
   NodeType, 
-  Plant 
+  Plant, 
+  Project,
+  ApioResponse
 } from '../types'
+
+import { handleException } from '../utils'
 
 export type Configuration = {
   uri: string,
@@ -39,8 +43,10 @@ class Sdk {
   public readonly nodeType: Resource<NewNodeType, NodeType>
   public readonly plant: Resource<NewPlant, Plant>
 
+  private client: AxiosInstance
+
   private constructor(config: Configuration) {
-    let client = axios.create({
+    this.client = axios.create({
       baseURL: [config.uri, '/projects/', config.projectId].join('') ,
       headers: config.apiKey 
         ? { Authorization: `apiKey ${config.apiKey}` } 
@@ -50,20 +56,29 @@ class Sdk {
     })
 
     if (config.cache) {
-      client = setupCache(client, typeof config.cache === 'object' ? config.cache : undefined)
+      this.client = setupCache(this.client, typeof config.cache === 'object' ? config.cache : undefined)
     }
 
-    this.assetType = new BaseResource(client, 'assetTypes')
-    this.asset = new BaseResource(client, 'assets')
-    this.device = new BaseResource(client, 'devices')
-    this.deviceType = new BaseResource(client, 'deviceTypes')
-    this.node = new BaseResource(client, 'nodes')
-    this.nodeType = new BaseResource(client, 'nodetypes')
-    this.plant = new BaseResource(client, 'plants')
+    this.assetType = new BaseResource(this.client, 'assetTypes')
+    this.asset = new BaseResource(this.client, 'assets')
+    this.device = new BaseResource(this.client, 'devices')
+    this.deviceType = new BaseResource(this.client, 'deviceTypes')
+    this.node = new BaseResource(this.client, 'nodes')
+    this.nodeType = new BaseResource(this.client, 'nodetypes')
+    this.plant = new BaseResource(this.client, 'plants')
   }
 
-  static create(config: Configuration): Sdk {
+  static create(config: Configuration): Readonly<Sdk> {
     return Object.freeze(new Sdk(config))
+  }
+
+  public async project(): Promise<Project> {
+    try {
+      const { data } = await this.client.get<ApioResponse<Project>>('/')
+      return data.data!
+    } catch (e) {
+      handleException(e)
+    }
   }
 }
 

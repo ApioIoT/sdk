@@ -35,6 +35,12 @@ describe('Testing SDK', () => {
       .toThrow(AuthenticationError)
   })
 
+  test('get project', async () => {
+    await expect(sdk.project())
+      .resolves
+      .toHaveProperty('uuid', process.env.PROJECT_ID!)
+  })
+
   test('get nodes', async () => {
     await expect(sdk.node.findAll())
       .resolves
