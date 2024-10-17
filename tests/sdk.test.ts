@@ -149,4 +149,12 @@ describe('Testing SDK', () => {
       .resolves
       .toHaveProperty('uuid', process.env.TEST_RULE_UUID!)
   })
+
+  test('get edge rules', async () => {
+    await expect(sdk.rule.findAll({
+      mode: 'edge'
+    }))
+      .resolves
+      .toBeInstanceOf(Array)
+  })
 })
