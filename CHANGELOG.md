@@ -1,3 +1,6 @@
+# 📦 2.1.6 (16 Oct 2024)
+- [31a19](https://github.com/ApioIoT/sdk/commit/31a19d5112ebf413c9f8a60eef36b6f0ed72665c)  📦 Release 2.1.6 [skip ci]
+- [7a6dc](https://github.com/ApioIoT/sdk/commit/7a6dca0c99a326547e285238492c91f3c8383283)  feat: add get project
 # 📦 2.1.5 (16 Oct 2024)
 - [7518d](https://github.com/ApioIoT/sdk/commit/7518d59b64adea7ccb7ee239c5f216ae17500478)  📦 Release 2.1.5 [skip ci]
 - [cba68](https://github.com/ApioIoT/sdk/commit/cba68b09e5513e44903fa20e229aef18b28386e7)  feat: upgrade modbus protocol
