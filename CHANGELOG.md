@@ -1,3 +1,6 @@
+# 📦 2.1.7 (17 Oct 2024)
+- [88f6b](https://github.com/ApioIoT/sdk/commit/88f6b55017829255b4f24a1d6cf1a4553f1cd89d)  📦 Release 2.1.7 [skip ci]
+- [43b59](https://github.com/ApioIoT/sdk/commit/43b59f9704b80b7d3e7444659534b0ac4cbc32b3)  feat: add rule support
 # 📦 2.1.6 (16 Oct 2024)
 - [31a19](https://github.com/ApioIoT/sdk/commit/31a19d5112ebf413c9f8a60eef36b6f0ed72665c)  📦 Release 2.1.6 [skip ci]
 - [7a6dc](https://github.com/ApioIoT/sdk/commit/7a6dca0c99a326547e285238492c91f3c8383283)  feat: add get project
