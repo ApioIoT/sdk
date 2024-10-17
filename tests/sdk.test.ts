@@ -137,4 +137,16 @@ describe('Testing SDK', () => {
       .rejects
       .toThrow(AbortError)
   })
+
+  test('get rules', async () => {
+    await expect(sdk.rule.findAll())
+      .resolves
+      .toBeInstanceOf(Array)
+  })
+
+  test('get rule', async () => {
+    await expect(sdk.rule.findById(process.env.TEST_RULE_UUID!))
+      .resolves
+      .toHaveProperty('uuid', process.env.TEST_RULE_UUID!)
+  })
 })

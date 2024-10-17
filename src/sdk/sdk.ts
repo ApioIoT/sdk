@@ -20,7 +20,9 @@ import {
   NodeType, 
   Plant, 
   Project,
-  ApioResponse
+  ApioResponse,
+  NewRule,
+  Rule
 } from '../types'
 
 import { handleException } from '../utils'
@@ -42,6 +44,7 @@ class Sdk {
   public readonly node: Resource<NewNode, Node>
   public readonly nodeType: Resource<NewNodeType, NodeType>
   public readonly plant: Resource<NewPlant, Plant>
+  public readonly rule: Resource<NewRule, Rule>
 
   private client: AxiosInstance
 
@@ -66,6 +69,7 @@ class Sdk {
     this.node = new BaseResource(this.client, 'nodes')
     this.nodeType = new BaseResource(this.client, 'nodetypes')
     this.plant = new BaseResource(this.client, 'plants')
+    this.rule = new BaseResource(this.client, 'rules')
   }
 
   static create(config: Configuration): Readonly<Sdk> {

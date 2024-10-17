@@ -435,3 +435,42 @@ export interface NodeType {
    */
   firmwareVersions?: Array<unknown>;
 }
+
+export type RuleAction = {
+	type: 'log' | 'command' | 'webhook'
+	value?: string
+	uri?: string
+	payload?: string
+	command?: Record<string, unknown>
+	deviceId?: string
+}
+
+export type RuleTrigger = {
+	type: 'telemetry' | 'cron' | 'event'
+	deviceId?: string
+	property?: string
+	crontab?:  string
+	topic?: string
+}
+
+export type RuleCondition = {
+  devices: Record<string, string>
+  condition: string
+  deadline?: number
+}
+
+export type Rule = {
+	uuid: string
+	name: string
+	description?: string
+	tags?: Array<string>
+	projectId: string
+	mode:  'cloud' | 'edge'
+	enabled: boolean
+	triggers: Array<RuleTrigger>
+	condition?: RuleCondition
+	actions: Array<RuleAction>
+	elseActions?: Array<RuleAction>
+	createdAt: Date
+	cpdatedAt: Date
+}
