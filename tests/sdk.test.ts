@@ -152,7 +152,8 @@ describe('Testing SDK', () => {
 
   test('get edge rules', async () => {
     await expect(sdk.rule.findAll({
-      mode: 'edge'
+      mode: 'edge',
+      enabled: true
     }))
       .resolves
       .toBeInstanceOf(Array)
