@@ -437,7 +437,8 @@ export interface NodeType {
 }
 
 export type RuleAction = {
-	type: 'log' | 'command' | 'webhook'
+	type: 'log' | 'command' | 'webhook' | 'wasm'
+  code?: string
 	value?: string
 	uri?: string
 	payload?: string
