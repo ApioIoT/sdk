@@ -1,3 +1,7 @@
+# 📦 2.1.9 (25 Oct 2024)
+- [309ca](https://github.com/ApioIoT/sdk/commit/309cad9c3a2e067d5e08c586b5c109db10268a8c)  📦 Release 2.1.9 [skip ci]
+- [91fdf](https://github.com/ApioIoT/sdk/commit/91fdf88ef25806b841315a52c77df28c26c43ab9)  feat: Rule Wasm support
+- [9866f](https://github.com/ApioIoT/sdk/commit/9866f1c38d531278dcf6cc855203582f07caa1c3)  chore: fix test
 # 📦 2.1.8 (17 Oct 2024)
 - [a119b](https://github.com/ApioIoT/sdk/commit/a119bd432233634edcb70176b6fe25572059a3a5)  📦 Release 2.1.8 [skip ci]
 - [dcd52](https://github.com/ApioIoT/sdk/commit/dcd522dc58db806bc83bb0750eeec6d9b49d2a64)  feat: add request config
