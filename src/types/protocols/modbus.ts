@@ -28,7 +28,8 @@ export type ModbusDeviceTypeProtocol = {
   registers: Array<{
     type?: 'uint' | 'int' | 'float' | 'double'
     register: number
-    modbusFunction: number
+    modbusFunctionRead: number
+    modbusFunctionWrite?: number
     words?: number
     bitwiseReading: boolean
     properties: Array<{
