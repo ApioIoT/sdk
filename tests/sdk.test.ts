@@ -158,4 +158,10 @@ describe('Testing SDK', () => {
       .resolves
       .toBeInstanceOf(Array)
   })
+
+  test('test update rule', async () => {
+    const rule = await sdk.rule.findAll()
+    await expect(sdk.rule.updateById(rule[0].uuid, rule[0]))
+      .resolves
+  })
 })
