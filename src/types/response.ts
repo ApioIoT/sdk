@@ -437,13 +437,23 @@ export interface NodeType {
 }
 
 export type RuleAction = {
-	type: 'log' | 'command' | 'webhook' | 'wasm'
-  code?: string
-	value?: string
-	uri?: string
-	payload?: string
-	command?: Record<string, unknown>
-	deviceId?: string
+  type: 'log'
+	value: string
+} | {
+  type: 'command'
+  command: Record<string, unknown>
+  deviceId: string
+} | {
+  type: 'webhook'
+  uri: string
+  payload: string
+} | {
+  type: 'wasm'
+  label?: string
+  language: 'as'
+  source: string
+  binary?: string
+  hash: string
 }
 
 export type RuleTrigger = {
@@ -465,9 +475,11 @@ export type Rule = {
 	name: string
 	description?: string
 	tags?: Array<string>
-	projectId: string
 	mode:  'cloud' | 'edge'
-	enabled: boolean
+  status: 'enabled' | 'pending' | 'rejected' | 'disabled'
+  metadata?: Record<string, unknown>
+	projectId: string
+  allowConcurrent: boolean
 	triggers: Array<RuleTrigger>
 	condition?: RuleCondition
 	actions: Array<RuleAction>
