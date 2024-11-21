@@ -1,3 +1,6 @@
+# 📦 2.1.1 (5 Nov 2024)
+- [0be89](https://github.com/ApioIoT/sdk/commit/0be8911bfbd27641cc4fb4027336e7f0709ee150)  📦 Release 2.1.10 [skip ci]
+- [cbe8a](https://github.com/ApioIoT/sdk/commit/cbe8a3c69b732022c881cee05cbc528df5d16431)  refactor: update for new modbus protocol properties
 # 📦 2.1.9 (25 Oct 2024)
 - [309ca](https://github.com/ApioIoT/sdk/commit/309cad9c3a2e067d5e08c586b5c109db10268a8c)  📦 Release 2.1.9 [skip ci]
 - [91fdf](https://github.com/ApioIoT/sdk/commit/91fdf88ef25806b841315a52c77df28c26c43ab9)  feat: Rule Wasm support
