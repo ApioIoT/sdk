@@ -163,6 +163,7 @@ export type Node = {
   lastDisconnectionAt: string
   description: string
   tags: Array<string>
+  rules?: Array<string>
   createdAt: Date
   updatedAt: Date
 }
