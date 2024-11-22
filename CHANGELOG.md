@@ -1,4 +1,6 @@
-# 📦 2.1.1 (5 Nov 2024)
+# 📦 2.1.1 (21 Nov 2024)
+- [adc0a](https://github.com/ApioIoT/sdk/commit/adc0a99e8d3844d82486681751c0b7a8dae76746)  📦 Release 2.1.11 [skip ci]
+- [ae350](https://github.com/ApioIoT/sdk/commit/ae350fef725da33fc7cfd9ad2e047511fd14ab04)  refactor: rule schema
 - [0be89](https://github.com/ApioIoT/sdk/commit/0be8911bfbd27641cc4fb4027336e7f0709ee150)  📦 Release 2.1.10 [skip ci]
 - [cbe8a](https://github.com/ApioIoT/sdk/commit/cbe8a3c69b732022c881cee05cbc528df5d16431)  refactor: update for new modbus protocol properties
 # 📦 2.1.9 (25 Oct 2024)
