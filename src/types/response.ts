@@ -103,13 +103,13 @@ export interface Asset {
 
 export type Device = {
   uuid: string
-  projectID: string
-  deviceTypeID: string
-  nodeID: string
+  projectId: string
+  deviceTypeId: string
+  nodeId: string
   encoder: string
   decoder: string
   firmwareVersion: string
-  plantID: string
+  plantId: string
   location?: {
     latitude: number
     longitude: number
@@ -145,11 +145,11 @@ export type NodeProtocol = {
 
 export type Node = {
   uuid: string
-  projectID: string
-  plantID: string
+  projectId: string
+  plantId: string
   name: string
   model: string
-  nodeTypeID: string
+  nodeTypeId: string
   serialNumber: string
   location?: {
     latitude: number
@@ -346,11 +346,11 @@ export interface DeviceTypeProperty {
 
 export type DeviceType = {
   uuid: string
-  projectID: string
+  projectId: string
   visibility: string
   encoder: string
   decoder: string
-  firmwareID: string
+  firmwareId: string
   firmwareVersions: Array<string>
   model: string
   manufacturer: string
