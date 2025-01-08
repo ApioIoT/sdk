@@ -1,4 +1,7 @@
-# 📦 2.1.1 (21 Nov 2024)
+# 📦 2.1.1 (22 Nov 2024)
+- [d43d0](https://github.com/ApioIoT/sdk/commit/d43d0291420694e99c1468759066142c1b28d0e8)  📦 Release 2.1.12 [skip ci]
+- [5236c](https://github.com/ApioIoT/sdk/commit/5236c26171bd1097efc08889181525545cc3b8bf)  feat: add rules in node
+- [9b2fc](https://github.com/ApioIoT/sdk/commit/9b2fc619dfc199c154925df9cd0a63df6516dd25)  chore: add new test
 - [adc0a](https://github.com/ApioIoT/sdk/commit/adc0a99e8d3844d82486681751c0b7a8dae76746)  📦 Release 2.1.11 [skip ci]
 - [ae350](https://github.com/ApioIoT/sdk/commit/ae350fef725da33fc7cfd9ad2e047511fd14ab04)  refactor: rule schema
 - [0be89](https://github.com/ApioIoT/sdk/commit/0be8911bfbd27641cc4fb4027336e7f0709ee150)  📦 Release 2.1.10 [skip ci]
