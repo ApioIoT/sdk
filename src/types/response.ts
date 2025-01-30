@@ -1,4 +1,5 @@
 import { KnxNodeProtocol } from './protocols/knx'
+import { LorawanNodeProtocol } from './protocols/lorawan'
 import { ModbusDeviceTypeProtocol, ModbusNodeProtocol } from './protocols/modbus'
 
 export const LocationPointTypeEnum = {
@@ -141,7 +142,7 @@ export type NodeProtocol = {
   uuid: string
   description?: string
   metadata?: object
-} & (ModbusNodeProtocol | KnxNodeProtocol)
+} & (ModbusNodeProtocol | KnxNodeProtocol | LorawanNodeProtocol)
 
 export type Node = {
   uuid: string
