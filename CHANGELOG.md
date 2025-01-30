@@ -1,4 +1,6 @@
-# 📦 2.1.1 (22 Nov 2024)
+# 📦 2.1.1 (8 Jan 2025)
+- [8483b](https://github.com/ApioIoT/sdk/commit/8483b1191946b5d5dbaddb5378827d733b31912b)  📦 Release 2.1.13 [skip ci]
+- [bf685](https://github.com/ApioIoT/sdk/commit/bf685fc5e0b25f92233c9f88499ceb43db4f43eb)  refactor: fix ID suffix case
 - [d43d0](https://github.com/ApioIoT/sdk/commit/d43d0291420694e99c1468759066142c1b28d0e8)  📦 Release 2.1.12 [skip ci]
 - [5236c](https://github.com/ApioIoT/sdk/commit/5236c26171bd1097efc08889181525545cc3b8bf)  feat: add rules in node
 - [9b2fc](https://github.com/ApioIoT/sdk/commit/9b2fc619dfc199c154925df9cd0a63df6516dd25)  chore: add new test
