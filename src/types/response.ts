@@ -1,3 +1,5 @@
+import { z } from 'zod'
+
 import { KnxNodeProtocol } from './protocols/knx'
 import { LorawanNodeProtocol } from './protocols/lorawan'
 import { ModbusDeviceTypeProtocol, ModbusNodeProtocol } from './protocols/modbus'
@@ -456,6 +458,9 @@ export type RuleAction = {
   source: string
   binary?: string
   hash: string
+} | {
+  type: 'delay'
+  time: number
 }
 
 export type RuleTrigger = {
@@ -489,3 +494,38 @@ export type Rule = {
 	createdAt: Date
 	cpdatedAt: Date
 }
+
+export const MeasureSchema = z.object({
+  projectId: z.string(),
+  deviceId: z.string(),
+  timestamp: z.number(),
+  name: z.string(),
+  value: z.number()
+})
+
+export type Measure = z.infer<typeof MeasureSchema>
+
+const CommandParametersSchema = z.object({
+  property: z.string(),
+  value: z.unknown()
+})
+
+export type CommandParameters = z.infer<typeof CommandParametersSchema>
+
+export const CommandSchema = z.object({
+  uuid: z.string(),
+  name: z.string(),
+  status: z.enum(['pending', 'received', 'completed', 'failed']),
+  projectId: z.string(),
+  nodeId: z.string().optional(),
+  deviceId: z.string().optional(),
+  parameters: z.array(CommandParametersSchema).or(CommandParametersSchema),
+  metadata: z.record(z.string(), z.unknown()).optional(),
+  createdAt: z.string().optional(),
+  updatedAt: z.string().optional(),
+  receivedAt: z.string().optional(),
+  completedAt: z.string().optional(),
+  failedAt: z.string().optional()
+})
+
+export type Command = z.infer<typeof CommandSchema>
