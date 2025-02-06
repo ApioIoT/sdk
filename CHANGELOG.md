@@ -1,4 +1,6 @@
-# 📦 2.1.1 (8 Jan 2025)
+# 📦 2.1.1 (30 Jan 2025)
+- [7f39f](https://github.com/ApioIoT/sdk/commit/7f39fd460e232da483c6d30d10af9a7100b25763)  📦 Release 2.1.14 [skip ci]
+- [9c431](https://github.com/ApioIoT/sdk/commit/9c431fac11a93204439158025c5ebdfaa5586a23)  feat: add lorawan support
 - [8483b](https://github.com/ApioIoT/sdk/commit/8483b1191946b5d5dbaddb5378827d733b31912b)  📦 Release 2.1.13 [skip ci]
 - [bf685](https://github.com/ApioIoT/sdk/commit/bf685fc5e0b25f92233c9f88499ceb43db4f43eb)  refactor: fix ID suffix case
 - [d43d0](https://github.com/ApioIoT/sdk/commit/d43d0291420694e99c1468759066142c1b28d0e8)  📦 Release 2.1.12 [skip ci]
