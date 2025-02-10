@@ -505,10 +505,7 @@ export const MeasureSchema = z.object({
 
 export type Measure = z.infer<typeof MeasureSchema>
 
-const CommandParametersSchema = z.object({
-  property: z.string().optional(),
-  value: z.unknown()
-})
+const CommandParametersSchema = z.record(z.string(), z.any())
 
 export type CommandParameters = z.infer<typeof CommandParametersSchema>
 
