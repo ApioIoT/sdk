@@ -1,4 +1,6 @@
-# 📦 2.1.1 (6 Feb 2025)
+# 📦 2.1.1 (10 Feb 2025)
+- [b3025](https://github.com/ApioIoT/sdk/commit/b3025f2cab6d3a79555fc658b6ce2c9b00dcd7c2)  📦 Release 2.1.16 [skip ci]
+- [1baeb](https://github.com/ApioIoT/sdk/commit/1baebfc5e822dc9bbe67790d7a6d0e9db290f5de)  refactor: fix command parameters
 - [0c0d7](https://github.com/ApioIoT/sdk/commit/0c0d70e182aed3a796ab272d0cd04f82c1b06ef9)  📦 Release 2.1.15 [skip ci]
 - [643af](https://github.com/ApioIoT/sdk/commit/643afef50c5338ad6723410b6ac9b7c770ea5b1c)  feat: add command, measure. add validation. update rule action
 - [7f39f](https://github.com/ApioIoT/sdk/commit/7f39fd460e232da483c6d30d10af9a7100b25763)  📦 Release 2.1.14 [skip ci]
