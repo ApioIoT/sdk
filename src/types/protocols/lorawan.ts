@@ -3,7 +3,8 @@ export type LorawanNodeProtocol = {
   configuration: {
     mapping: {
       [key: string]: {
-        deviceEUI: string
+        deviceEUI: string,
+        fPort?: number
       }
     }
   }
