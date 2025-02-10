@@ -519,7 +519,7 @@ export const CommandSchema = z.object({
   projectId: z.string(),
   nodeId: z.string().optional(),
   deviceId: z.string().optional(),
-  parameters: z.array(CommandParametersSchema).or(CommandParametersSchema),
+  parameters: z.array(CommandParametersSchema).or(CommandParametersSchema).optional(),
   metadata: z.record(z.string(), z.unknown()).optional(),
   createdAt: z.string().optional(),
   updatedAt: z.string().optional(),

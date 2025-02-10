@@ -1,6 +1,7 @@
 import { 
   Asset, 
   AssetType, 
+  Command, 
   Device, 
   DeviceType, 
   Node, 
@@ -30,3 +31,6 @@ export type NewRule = {
 	actions: Array<RuleAction>
 	elseActions?: Array<RuleAction>
 }
+
+type commandHiddenFields = 'uuid' | 'status' | 'createdAt' | 'updatedAt' | 'receivedAt' | 'completedAt' | 'failedAt'
+export type NewCommand = Omit<Command, commandHiddenFields>
