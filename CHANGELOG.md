@@ -1,4 +1,6 @@
-# 📦 2.1.1 (30 Jan 2025)
+# 📦 2.1.1 (6 Feb 2025)
+- [0c0d7](https://github.com/ApioIoT/sdk/commit/0c0d70e182aed3a796ab272d0cd04f82c1b06ef9)  📦 Release 2.1.15 [skip ci]
+- [643af](https://github.com/ApioIoT/sdk/commit/643afef50c5338ad6723410b6ac9b7c770ea5b1c)  feat: add command, measure. add validation. update rule action
 - [7f39f](https://github.com/ApioIoT/sdk/commit/7f39fd460e232da483c6d30d10af9a7100b25763)  📦 Release 2.1.14 [skip ci]
 - [9c431](https://github.com/ApioIoT/sdk/commit/9c431fac11a93204439158025c5ebdfaa5586a23)  feat: add lorawan support
 - [8483b](https://github.com/ApioIoT/sdk/commit/8483b1191946b5d5dbaddb5378827d733b31912b)  📦 Release 2.1.13 [skip ci]
