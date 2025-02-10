@@ -506,7 +506,7 @@ export const MeasureSchema = z.object({
 export type Measure = z.infer<typeof MeasureSchema>
 
 const CommandParametersSchema = z.object({
-  property: z.string(),
+  property: z.string().optional(),
   value: z.unknown()
 })
 
@@ -519,7 +519,7 @@ export const CommandSchema = z.object({
   projectId: z.string(),
   nodeId: z.string().optional(),
   deviceId: z.string().optional(),
-  parameters: z.array(CommandParametersSchema).or(CommandParametersSchema).optional(),
+  parameters: z.array(CommandParametersSchema).or(CommandParametersSchema),
   metadata: z.record(z.string(), z.unknown()).optional(),
   createdAt: z.string().optional(),
   updatedAt: z.string().optional(),
