@@ -1,4 +1,6 @@
 # 📦 2.1.1 (10 Feb 2025)
+- [0d2b2](https://github.com/ApioIoT/sdk/commit/0d2b24219b80b525a566bc69a5b5fc7a1ad0f58f)  📦 Release 2.1.19 [skip ci]
+- [dfca9](https://github.com/ApioIoT/sdk/commit/dfca9a556495d36b38d918025e3820f5684f970a)  feat: add fPort on lorawan protocols
 - [72e2f](https://github.com/ApioIoT/sdk/commit/72e2f494df3b85c51c02e86e7a76cc872ff4c938)  📦 Release 2.1.18 [skip ci]
 - [f9980](https://github.com/ApioIoT/sdk/commit/f99806fbe98ce869aa95aa4199a3123695f7021b)  refactor: add generic command parameter
 - [ab86c](https://github.com/ApioIoT/sdk/commit/ab86c5cf0b7605270eb1503b8138b9c0cb3832cb)  📦 Release 2.1.17 [skip ci]
