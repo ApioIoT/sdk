@@ -1,3 +1,6 @@
+# 📦 2.1.2 (13 Feb 2025)
+- [4a502](https://github.com/ApioIoT/sdk/commit/4a502ecc5cd13fceeee4ef7cee79d898abc399af)  📦 Release 2.1.20 [skip ci]
+- [ab2aa](https://github.com/ApioIoT/sdk/commit/ab2aab378da9923e5857e25aaf2b015576eb14fb)  feat: add applicationId in lora-wan configuration
 # 📦 2.1.1 (10 Feb 2025)
 - [0d2b2](https://github.com/ApioIoT/sdk/commit/0d2b24219b80b525a566bc69a5b5fc7a1ad0f58f)  📦 Release 2.1.19 [skip ci]
 - [dfca9](https://github.com/ApioIoT/sdk/commit/dfca9a556495d36b38d918025e3820f5684f970a)  feat: add fPort on lorawan protocols
