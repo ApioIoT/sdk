@@ -3,6 +3,7 @@ import { z } from 'zod'
 import { KnxNodeProtocol } from './protocols/knx'
 import { LorawanNodeProtocol } from './protocols/lorawan'
 import { ModbusDeviceTypeProtocol, ModbusNodeProtocol } from './protocols/modbus'
+import { HttpPollingNodeProtocol } from './protocols/http-polling'
 
 export const LocationPointTypeEnum = {
   Point: 'point'
@@ -144,7 +145,7 @@ export type NodeProtocol = {
   uuid: string
   description?: string
   metadata?: object
-} & (ModbusNodeProtocol | KnxNodeProtocol | LorawanNodeProtocol)
+} & (ModbusNodeProtocol | KnxNodeProtocol | LorawanNodeProtocol | HttpPollingNodeProtocol)
 
 export type Node = {
   uuid: string
