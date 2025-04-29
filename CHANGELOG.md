@@ -1,4 +1,6 @@
-# 📦 2.1.2 (14 Feb 2025)
+# 📦 2.1.2 (29 Apr 2025)
+- [ffbf1](https://github.com/ApioIoT/sdk/commit/ffbf106a531a47f4feee8a07603b449f8a2ad485)  📦 Release 2.1.22 [skip ci]
+- [334bf](https://github.com/ApioIoT/sdk/commit/334bf78a0cf45690e0bdc3e7b980b9f935ab6591)  feat: add knx polling time
 - [86ce0](https://github.com/ApioIoT/sdk/commit/86ce0efb160c5e94400511e05b163e089e2add65)  📦 Release 2.1.21 [skip ci]
 - [5cfc9](https://github.com/ApioIoT/sdk/commit/5cfc95924856de72fb12b3e11fa6eb2b2914e29f)  feat: add http-polling node protocol
 - [4a502](https://github.com/ApioIoT/sdk/commit/4a502ecc5cd13fceeee4ef7cee79d898abc399af)  📦 Release 2.1.20 [skip ci]
