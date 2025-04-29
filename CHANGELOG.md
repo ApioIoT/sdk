@@ -1,4 +1,6 @@
-# 📦 2.1.2 (13 Feb 2025)
+# 📦 2.1.2 (14 Feb 2025)
+- [86ce0](https://github.com/ApioIoT/sdk/commit/86ce0efb160c5e94400511e05b163e089e2add65)  📦 Release 2.1.21 [skip ci]
+- [5cfc9](https://github.com/ApioIoT/sdk/commit/5cfc95924856de72fb12b3e11fa6eb2b2914e29f)  feat: add http-polling node protocol
 - [4a502](https://github.com/ApioIoT/sdk/commit/4a502ecc5cd13fceeee4ef7cee79d898abc399af)  📦 Release 2.1.20 [skip ci]
 - [ab2aa](https://github.com/ApioIoT/sdk/commit/ab2aab378da9923e5857e25aaf2b015576eb14fb)  feat: add applicationId in lora-wan configuration
 # 📦 2.1.1 (10 Feb 2025)
