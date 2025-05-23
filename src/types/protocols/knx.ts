@@ -4,13 +4,15 @@ export type KnxNodeProtocol = {
     ip: string
     port: number
     physAddr: string
-    readingFrequency: number
-    cloudFrequency: number | 'onchange'
-    edgeFrequency: number | 'onchange'
     mapping?: Record<
       string,
       {
-        address: string
+        reading?: 'event' | 'polling',
+        pollingConfig?: {
+          readingFrequency: number
+          cloudFrequency: number | 'onchange'
+          edgeFrequency: number | 'onchange'
+        },
         properties: Record<
           string,
           {
