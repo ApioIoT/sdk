@@ -1,4 +1,6 @@
 # 📦 2.1.2 (29 Apr 2025)
+- [9102d](https://github.com/ApioIoT/sdk/commit/9102d43929d58ceea5196142ba3632383369cab1)  📦 Release 2.1.23 [skip ci]
+- [50565](https://github.com/ApioIoT/sdk/commit/505656124d49376260f39cd90acefa7b1d4319c4)  fix: update readingFrequency type to number
 - [ffbf1](https://github.com/ApioIoT/sdk/commit/ffbf106a531a47f4feee8a07603b449f8a2ad485)  📦 Release 2.1.22 [skip ci]
 - [334bf](https://github.com/ApioIoT/sdk/commit/334bf78a0cf45690e0bdc3e7b980b9f935ab6591)  feat: add knx polling time
 - [86ce0](https://github.com/ApioIoT/sdk/commit/86ce0efb160c5e94400511e05b163e089e2add65)  📦 Release 2.1.21 [skip ci]
