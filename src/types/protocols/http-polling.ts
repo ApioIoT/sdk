@@ -2,6 +2,6 @@ export type HttpPollingNodeProtocol = {
   name: 'http-polling'
   configuration: {
     uri: string,
-    mapping: Record<string, unknown>
+    mapping: Record<string, any>
   }
 }

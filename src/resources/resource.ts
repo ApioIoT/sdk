@@ -1,7 +1,7 @@
 import { AxiosInstance } from 'axios'
 import { BaseResponse } from '../types'
 
-export type ResourceConfig = Record<string, unknown>
+export type ResourceConfig = Record<string, any>
 
 /**
  * Platform resource.

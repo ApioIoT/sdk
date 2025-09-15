@@ -13,6 +13,6 @@ export type ApioResponse<T> = {
   }
 }
 
-export interface BaseResponse {
+export type BaseResponse = {
   uuid: string
 }

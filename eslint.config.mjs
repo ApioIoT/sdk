@@ -12,7 +12,8 @@ export default [
     rules: {
       'semi': [2, 'never'],
       'comma-dangle': ['error', 'never'],
-      'quotes': [2, 'single', { 'avoidEscape': true }]
+      'quotes': [2, 'single', { 'avoidEscape': true }],
+       '@typescript-eslint/no-explicit-any': 'off'
     }
   }
 ]

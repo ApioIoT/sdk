@@ -1,7 +1,7 @@
 import { AxiosError } from 'axios'
 import { AuthenticationError, ConfigurationError, NotFoundError, SystemError, AbortError } from './types'
 
-export function handleException (e: unknown): never {
+export function handleException (e: any) {
   if (e instanceof AxiosError) {
     switch (e.status) {
       case 401:
