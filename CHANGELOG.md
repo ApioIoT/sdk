@@ -1,4 +1,8 @@
-# 📦 2.1.2 (29 Apr 2025)
+# 📦 2.1.2 (23 May 2025)
+- [5afa6](https://github.com/ApioIoT/sdk/commit/5afa6d15441141635f8fdce13255ad9ffa36ac3e)  📦 Release 2.1.24 [skip ci]
+- [7c33b](https://github.com/ApioIoT/sdk/commit/7c33bc9addf8b2fb4f95b6cf94cf575cacdc46bd)  chore: package update
+- [deb8c](https://github.com/ApioIoT/sdk/commit/deb8c28c367a9e5d3113e711d19f3327cacd9765)  chore: audit fix
+- [a07d4](https://github.com/ApioIoT/sdk/commit/a07d45f0106ec101ddc9bc788924cb8c0a2787b0)  refactor: update knx protcol
 - [9102d](https://github.com/ApioIoT/sdk/commit/9102d43929d58ceea5196142ba3632383369cab1)  📦 Release 2.1.23 [skip ci]
 - [50565](https://github.com/ApioIoT/sdk/commit/505656124d49376260f39cd90acefa7b1d4319c4)  fix: update readingFrequency type to number
 - [ffbf1](https://github.com/ApioIoT/sdk/commit/ffbf106a531a47f4feee8a07603b449f8a2ad485)  📦 Release 2.1.22 [skip ci]
