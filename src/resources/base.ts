@@ -11,9 +11,9 @@ class BaseResource<T, K extends BaseResponse> extends Resource<T, K> {
     this.path = path
   }
 
-  async findAll(config?: ResourceConfig): Promise<Array<K> | never> {
+  async findAll(config?: ResourceConfig): Promise<K[] | never> {
     try {
-      const { data } = await this.client.get<ApioResponse<Array<K>>>(this.path, { 
+      const { data } = await this.client.get<ApioResponse<K[]>>(this.path, { 
         params: config
       })
       return data.data!

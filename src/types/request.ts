@@ -24,12 +24,12 @@ export type NewPlant = Omit<Plant, hiddenFields>
 export type NewRule = {
 	name: string
 	description?: string
-	tags?: Array<string>
+	tags?: string[]
 	mode:  'cloud' | 'edge'
-	triggers: Array<RuleTrigger>
+	triggers: RuleTrigger[]
 	condition?: RuleCondition
-	actions: Array<RuleAction>
-	elseActions?: Array<RuleAction>
+	actions: RuleAction[]
+	elseActions?: RuleAction[]
 }
 
 type commandHiddenFields = 'uuid' | 'status' | 'createdAt' | 'updatedAt' | 'receivedAt' | 'completedAt' | 'failedAt'
