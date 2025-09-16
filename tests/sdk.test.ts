@@ -6,7 +6,10 @@ import { AuthenticationError, ConfigurationError, NotFoundError, AbortError } fr
 
 const sdk = Sdk.create({
   uri: process.env.BASE_URI!,
-  apiKey: process.env.API_KEY!,
+  authorization: {
+    type: 'apiKey',
+    secret: process.env.API_KEY!
+  },
   projectId: process.env.PROJECT_ID!
 })
 
@@ -14,7 +17,10 @@ describe('Testing SDK', () => {
   test('test ConfigurationError', async () => {
     const sdk = Sdk.create({
       uri: 'asd',
-      apiKey: process.env.API_KEY!,
+      authorization: {
+        type: 'apiKey',
+        secret: process.env.API_KEY!
+      },
       projectId: process.env.PROJECT_ID!
     })
 
@@ -26,7 +32,10 @@ describe('Testing SDK', () => {
   test('test AuthenticationError', async () => {
     const sdk = Sdk.create({
       uri: process.env.BASE_URI!,
-      apiKey: 'lol',
+      authorization: {
+        type: 'apiKey',
+        secret: 'lol'
+      },
       projectId: process.env.PROJECT_ID!
     })
 
@@ -98,7 +107,10 @@ describe('Testing SDK', () => {
   test('test Timeout', async () => {
     const sdk = Sdk.create({
       uri: process.env.BASE_URI!,
-      apiKey: 'lol',
+      authorization: {
+        type: 'apiKey',
+        secret: 'lol'
+      },
       projectId: process.env.PROJECT_ID!,
       timeout: 1
     })
@@ -111,7 +123,10 @@ describe('Testing SDK', () => {
   test('test Cancellation with timeout', async () => {
     const sdk = Sdk.create({
       uri: process.env.BASE_URI!,
-      apiKey: 'lol',
+      authorization: {
+        type: 'apiKey',
+        secret: 'lol'
+      },
       projectId: process.env.PROJECT_ID!,
       signal: AbortSignal.timeout(1)
     })
@@ -126,7 +141,10 @@ describe('Testing SDK', () => {
     
     const sdk = Sdk.create({
       uri: process.env.BASE_URI!,
-      apiKey: 'lol',
+      authorization: {
+        type: 'apiKey',
+        secret: 'lol'
+      },
       projectId: process.env.PROJECT_ID!,
       signal: controller.signal
     })

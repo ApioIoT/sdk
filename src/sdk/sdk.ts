@@ -29,7 +29,10 @@ import { handleException } from '../utils'
 
 export type Configuration = {
   uri: string,
-  apiKey?: string,
+  authorization?: {
+    type: 'apiKey' | 'Bearer',
+    secret: string
+  },
   projectId: string,
   cache?: boolean | { ttl: number },
   timeout?: number,
@@ -46,21 +49,13 @@ class Sdk {
   public readonly plant: Resource<NewPlant, Plant>
   public readonly rule: Resource<NewRule, Rule>
 
+  private readonly configuration: Omit<Configuration, 'projectId'>
   private client: AxiosInstance
 
   private constructor(config: Configuration) {
-    this.client = axios.create({
-      baseURL: [config.uri, '/projects/', config.projectId].join('') ,
-      headers: config.apiKey 
-        ? { Authorization: `apiKey ${config.apiKey}` } 
-        : {},
-      timeout: config.timeout,
-      signal: config.signal
-    })
-
-    if (config.cache) {
-      this.client = setupCache(this.client, typeof config.cache === 'object' ? config.cache : undefined)
-    }
+    this.configuration = config
+    
+    this.client = this.createAxiosClient(config.projectId)
 
     this.assetType = new BaseResource(this.client, 'assetTypes')
     this.asset = new BaseResource(this.client, 'assets')
@@ -72,17 +67,45 @@ class Sdk {
     this.rule = new BaseResource(this.client, 'rules')
   }
 
-  static create(config: Configuration): Readonly<Sdk> {
-    return Object.freeze(new Sdk(config))
+  private createAxiosClient(projectId: string): AxiosInstance {
+    const headers: Record<string, string> = {}
+
+    const { authorization } = this.configuration
+    if (authorization?.type === 'apiKey') {
+      headers.Authorization = `apiKey ${authorization.secret}`
+    } else if (authorization?.type === 'Bearer') {
+      headers.Authorization = `Bearer ${authorization.secret}`
+    }
+
+    const client = axios.create({
+      baseURL: [this.configuration.uri, '/projects/', projectId].join(''),
+      headers,
+      timeout: this.configuration.timeout,
+      signal: this.configuration.signal
+    })
+
+    if (this.configuration.cache) {
+      return setupCache(client, typeof this.configuration.cache === 'object' ? this.configuration.cache : undefined)
+    }
+
+    return client
   }
 
-  public async project(): Promise<Project> {
+  static create(config: Configuration): Sdk {
+    return new Sdk(config)
+  }
+
+  async project(): Promise<Project> {
     try {
       const { data } = await this.client.get<ApioResponse<Project>>('/')
       return data.data!
     } catch (e) {
       handleException(e)
     }
+  }
+
+  switchProject(projectId: string) {
+    this.client = this.createAxiosClient(projectId)
   }
 }
 
