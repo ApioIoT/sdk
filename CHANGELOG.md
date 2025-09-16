@@ -1,4 +1,7 @@
-# 📦 2.1.2 (23 May 2025)
+# 📦 2.1.2 (15 Sep 2025)
+- [8bcc5](https://github.com/ApioIoT/sdk/commit/8bcc5d181b14f0d71dfe0db75a4765a971e2fff0)  📦 Release 2.1.25 [skip ci]
+- [43dd7](https://github.com/ApioIoT/sdk/commit/43dd7050326a778aefe7edbad4a526480268db39)  chore: package update
+- [139e3](https://github.com/ApioIoT/sdk/commit/139e3614bfac6245e955967cfb1b9ed7a7e68109)  chore: package update
 - [5afa6](https://github.com/ApioIoT/sdk/commit/5afa6d15441141635f8fdce13255ad9ffa36ac3e)  📦 Release 2.1.24 [skip ci]
 - [7c33b](https://github.com/ApioIoT/sdk/commit/7c33bc9addf8b2fb4f95b6cf94cf575cacdc46bd)  chore: package update
 - [deb8c](https://github.com/ApioIoT/sdk/commit/deb8c28c367a9e5d3113e711d19f3327cacd9765)  chore: audit fix
