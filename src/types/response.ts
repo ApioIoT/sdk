@@ -4,6 +4,9 @@ import { KnxNodeProtocol } from './protocols/knx'
 import { LorawanNodeProtocol } from './protocols/lorawan'
 import { ModbusDeviceTypeProtocol, ModbusNodeProtocol } from './protocols/modbus'
 import { HttpPollingNodeProtocol } from './protocols/http-polling'
+ 
+const MetadataSchema = z.record(z.string(), z.any())
+type Metadata = z.infer<typeof MetadataSchema>
 
 export enum LocationPointTypeEnum {
   Point = 'point'
@@ -18,8 +21,8 @@ export type Project = {
   uuid: string
   projectId: string
   name: string
-  metadata?: object
-  configuration?: object
+  metadata?: Metadata
+  configuration?: Record<string, any>,
   createdAt: Date
   updatedAt: Date
 }
@@ -28,7 +31,7 @@ export type Asset = {
   uuid: string
   createdAt: Date
   updatedAt: Date
-  metadata?: Record<string, any>
+  metadata?: Metadata
   projectId: string
   name: string
   description?: string
@@ -55,9 +58,9 @@ export type Device = {
   name: string
   description: string
   deviceType: DeviceType
-  metadata: object
-  state: object
-  stateUpdatedAt: object
+  metadata: Metadata
+  state: Record<string, any>,
+  stateUpdatedAt: Record<string, any>,
   lastActivityAt: string
   lastCommunicationAt: string
   connectivityStatus: string
@@ -76,7 +79,7 @@ export enum NodeConnectivityStatusEnum {
 export type NodeProtocol = {
   uuid: string
   description?: string
-  metadata?: object
+  metadata?: Metadata
 } & (ModbusNodeProtocol | KnxNodeProtocol | LorawanNodeProtocol | HttpPollingNodeProtocol)
 
 export type Node = {
@@ -92,7 +95,7 @@ export type Node = {
     longitude: number
   }
   protocols?: NodeProtocol[]
-  metadata: object
+  metadata: Metadata
   connectivityStatus: string
   lastConnectionAt: string
   lastCommunicationAt: string
@@ -117,7 +120,7 @@ export type Plant = {
   uuid: string
   createdAt: Date
   updatedAt: Date
-  metadata?: Record<string, any>
+  metadata?: Metadata
   projectId: string
   name: string
   location?: LocationPolygon
@@ -129,7 +132,7 @@ export type AssetType = {
   uuid: string
   createdAt: Date
   updatedAt: Date
-  metadata?: Record<string, any>
+  metadata?: Metadata
   projectId: string
   name: string
   manufacturer?: string
@@ -169,10 +172,10 @@ export type DeviceType = {
   protocols?: {
     modbus?: ModbusDeviceTypeProtocol
   }
-  metadata: object
-  commands: object
-  events: object
-  properties: object
+  metadata: Metadata
+  commands: Record<string, any>,
+  events: Record<string, any>,
+  properties: Record<string, any>,
   createdAt: Date
   updatedAt: Date
 }
@@ -181,7 +184,7 @@ export type NodeType = {
   uuid: string
   createdAt: Date
   updatedAt: Date
-  metadata?: Record<string, any>
+  metadata?: Metadata
   name: string
   manufacturer?: string
   model?: string
@@ -235,7 +238,7 @@ export type Rule = {
 	tags?: string[]
 	mode:  'cloud' | 'edge'
   status: 'enabled' | 'pending' | 'rejected' | 'disabled'
-  metadata?: Record<string, any>
+  metadata?: Metadata
 	projectId: string
   allowConcurrent: boolean
 	triggers: RuleTrigger[]
@@ -268,7 +271,7 @@ export const CommandSchema = z.object({
   nodeId: z.string().optional(),
   deviceId: z.string().optional(),
   parameters: z.array(CommandParametersSchema).or(CommandParametersSchema),
-  metadata: z.record(z.string(), z.any()).optional(),
+  metadata: MetadataSchema.optional(),
   createdAt: z.string().optional(),
   updatedAt: z.string().optional(),
   receivedAt: z.string().optional(),
