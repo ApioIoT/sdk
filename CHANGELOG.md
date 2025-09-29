@@ -1,3 +1,6 @@
+# 📦 3.0.0 (16 Sep 2025)
+- [2d8bc](https://github.com/ApioIoT/sdk/commit/2d8bc563e1ef0ac76510db4b5719a0a7facd5d27)  📦 Release 3.0.0 [skip ci]
+- [6a1aa](https://github.com/ApioIoT/sdk/commit/6a1aa8b9f911551de57b5e34ac0c55ee7476154e)  feat: add Bearer support and multi project managment
 # 📦 2.1.2 (16 Sep 2025)
 - [0c876](https://github.com/ApioIoT/sdk/commit/0c876e98ab8e5b9377551f76341852d4cc4144a5)  📦 Release 2.1.26 [skip ci]
 - [3736c](https://github.com/ApioIoT/sdk/commit/3736c336a98606ce6a210f89be238116c0aed538)  chore: clean code
