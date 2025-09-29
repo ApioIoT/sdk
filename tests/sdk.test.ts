@@ -4,25 +4,24 @@ import Sdk from '../src/sdk/sdk'
 
 import { AuthenticationError, ConfigurationError, NotFoundError, AbortError } from '../src/types'
 
-const sdk = Sdk.create({
+const sdk = new Sdk({
   uri: process.env.BASE_URI!,
   authorization: {
     type: 'apiKey',
     secret: process.env.API_KEY!
-  },
-  projectId: process.env.PROJECT_ID!
+  }
 })
+const project = sdk.project(process.env.PROJECT_ID!)
 
 describe('Testing SDK', () => {
   test('test ConfigurationError', async () => {
-    const sdk = Sdk.create({
+    const sdk = new Sdk({
       uri: 'asd',
       authorization: {
         type: 'apiKey',
         secret: process.env.API_KEY!
-      },
-      projectId: process.env.PROJECT_ID!
-    })
+      }
+    }).project(process.env.PROJECT_ID!)
 
     await expect(sdk.node.findAll())
       .rejects
@@ -30,90 +29,82 @@ describe('Testing SDK', () => {
   })
 
   test('test AuthenticationError', async () => {
-    const sdk = Sdk.create({
+    const sdk = new Sdk({
       uri: process.env.BASE_URI!,
       authorization: {
         type: 'apiKey',
         secret: 'lol'
-      },
-      projectId: process.env.PROJECT_ID!
-    })
+      }
+    }).project(process.env.PROJECT_ID!)
 
     await expect(sdk.node.findAll())
       .rejects
       .toThrow(AuthenticationError)
   })
 
-  test('get project', async () => {
-    await expect(sdk.project())
-      .resolves
-      .toHaveProperty('uuid', process.env.PROJECT_ID!)
-  })
-
   test('get nodes', async () => {
-    await expect(sdk.node.findAll())
+    await expect(project.node.findAll())
       .resolves
       .toBeInstanceOf(Array)
   })
 
   test('get node', async () => {
-    await expect(sdk.node.findById(process.env.TEST_NODE_UUID!))
+    await expect(project.node.findById(process.env.TEST_NODE_UUID!))
       .resolves
       .toHaveProperty('uuid', process.env.TEST_NODE_UUID!)
   })
 
   test('get fake node', async () => {
-    await expect(sdk.node.findById('123'))
+    await expect(project.node.findById('123'))
       .rejects
       .toThrow(NotFoundError)
   })
 
   test('get devices', async () => {
-    await expect(sdk.device.findAll())
+    await expect(project.device.findAll())
       .resolves
       .toBeInstanceOf(Array)
   })
 
   test('get device', async () => {
-    await expect(sdk.device.findById(process.env.TEST_DEVICE_UUID!))
+    await expect(project.device.findById(process.env.TEST_DEVICE_UUID!))
       .resolves
       .toHaveProperty('uuid', process.env.TEST_DEVICE_UUID!)
   })
 
   test('get fake device', async () => {
-    await expect(sdk.device.findById('123'))
+    await expect(project.device.findById('123'))
       .rejects
       .toThrow(NotFoundError)
   })
 
   test('get device types', async () => {
-    await expect(sdk.deviceType.findAll())
+    await expect(project.deviceType.findAll())
       .resolves
       .toBeInstanceOf(Array)
   })
 
   test('get device type', async () => {
-    await expect(sdk.deviceType.findById(process.env.TEST_DEVICE_TYPE_UUID!))
+    await expect(project.deviceType.findById(process.env.TEST_DEVICE_TYPE_UUID!))
       .resolves
       .toHaveProperty('uuid', process.env.TEST_DEVICE_TYPE_UUID!)
   })
 
   test('get fake device type', async () => {
-    await expect(sdk.deviceType.findById('123'))
+    await expect(project.deviceType.findById('123'))
       .rejects
       .toThrow(NotFoundError)
   })
 
   test('test Timeout', async () => {
-    const sdk = Sdk.create({
+    const sdk = new Sdk({
       uri: process.env.BASE_URI!,
       authorization: {
         type: 'apiKey',
         secret: 'lol'
       },
-      projectId: process.env.PROJECT_ID!,
       timeout: 1
-    })
+    }).project(process.env.PROJECT_ID!)
 
     await expect(sdk.node.findAll())
       .rejects
@@ -121,15 +112,14 @@ describe('Testing SDK', () => {
   })
 
   test('test Cancellation with timeout', async () => {
-    const sdk = Sdk.create({
+    const sdk = new Sdk({
       uri: process.env.BASE_URI!,
       authorization: {
         type: 'apiKey',
         secret: 'lol'
       },
-      projectId: process.env.PROJECT_ID!,
       signal: AbortSignal.timeout(1)
-    })
+    }).project(process.env.PROJECT_ID!)
 
     await expect(sdk.node.findAll())
       .rejects
@@ -139,15 +129,14 @@ describe('Testing SDK', () => {
   test('test Cancellation with abort', async () => {
     const controller = new AbortController()
     
-    const sdk = Sdk.create({
+    const sdk = new Sdk({
       uri: process.env.BASE_URI!,
       authorization: {
         type: 'apiKey',
         secret: 'lol'
       },
-      projectId: process.env.PROJECT_ID!,
       signal: controller.signal
-    })
+    }).project(process.env.PROJECT_ID!)
 
     controller.abort()
 
@@ -157,19 +146,19 @@ describe('Testing SDK', () => {
   })
 
   test('get rules', async () => {
-    await expect(sdk.rule.findAll())
+    await expect(project.rule.findAll())
       .resolves
       .toBeInstanceOf(Array)
   })
 
   test('get rule', async () => {
-    await expect(sdk.rule.findById(process.env.TEST_RULE_UUID!))
+    await expect(project.rule.findById(process.env.TEST_RULE_UUID!))
       .resolves
       .toHaveProperty('uuid', process.env.TEST_RULE_UUID!)
   })
 
   test('get edge rules', async () => {
-    await expect(sdk.rule.findAll({
+    await expect(project.rule.findAll({
       mode: 'edge',
       enabled: true
     }))
@@ -178,8 +167,8 @@ describe('Testing SDK', () => {
   })
 
   test('test update rule', async () => {
-    const rule = await sdk.rule.findAll()
-    await expect(sdk.rule.updateById(rule[0].uuid, rule[0]))
+    const rule = await project.rule.findAll()
+    await expect(project.rule.updateById(rule[0].uuid, rule[0]))
       .resolves
   })
 })

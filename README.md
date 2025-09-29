@@ -13,32 +13,22 @@ npm i @apio/sdk
 ```typescript
 import Sdk, { Device } from '@apio/sdk'
 
-const sdk = Sdk.create({
+const sdk = new Sdk({
   uri: 'platform-uri',
-  apiKey: 'your-api-key',
-  projectId: 'your-project-id'
+  apiKey: 'your-api-key'
 })
 
-async function main () {
-  try {
-    const devices: Device[] = await sdk.device.findAll()
-    console.log(devices)
-  } catch (e) {
-    console.error(e)
-  }
-}
-
-main()
+const project = sdk.project('your-project-id')
+const devices: Device[] = await project.device.findAll()
 ```
 
 ### Cache
 Sdk support Cache strategy. For enable it set cache property in configuration:
 
 ```typescript
-const sdk = Sdk.create({
+const sdk = new Sdk({
   uri: 'platform-uri',
   apiKey: 'your-api-key',
-  projectId: 'your-project-id'
   cache: true // For default configuration. Otherwise: { ttl: number }
 })
 ```
