@@ -1,3 +1,8 @@
+# 📦 4.0.0 (29 Sep 2025)
+- [4983d](https://github.com/ApioIoT/sdk/commit/4983d31193810494c2b394dde78baa40dced305d)  📦 Release 4.0.0 [skip ci]
+- [e899d](https://github.com/ApioIoT/sdk/commit/e899dab5392e36a8da42100d509d75051fbe5831)  refactor: fix multiproject
+- [49278](https://github.com/ApioIoT/sdk/commit/492785f7f9aca3ad0d3c3f265876e3d49a086b56)  chore: package update
+- [af0ca](https://github.com/ApioIoT/sdk/commit/af0cacfae5169ceb6dd7b1534969a0ddaac72d59)  refactor: type update
 # 📦 3.0.0 (16 Sep 2025)
 - [2d8bc](https://github.com/ApioIoT/sdk/commit/2d8bc563e1ef0ac76510db4b5719a0a7facd5d27)  📦 Release 3.0.0 [skip ci]
 - [6a1aa](https://github.com/ApioIoT/sdk/commit/6a1aa8b9f911551de57b5e34ac0c55ee7476154e)  feat: add Bearer support and multi project managment
