@@ -28,7 +28,9 @@ export type ModbusDeviceTypeProtocol = {
   registers: {
     type?: 'uint' | 'int' | 'float' | 'double'
     register: number
-    modbusFunctionRead: number
+    read: boolean
+    modbusFunctionRead?: number
+    write: boolean,
     modbusFunctionWrite?: number
     words?: number
     bitwiseReading: boolean
