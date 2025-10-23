@@ -280,3 +280,8 @@ export const CommandSchema = z.object({
 })
 
 export type Command = z.infer<typeof CommandSchema>
+
+export type CommandAck = {
+  uuid: string
+  status: 'received' | 'completed' | 'failed'
+} & Record<string, any>
