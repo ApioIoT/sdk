@@ -1,3 +1,6 @@
+# 📦 4.0.1 (9 Oct 2025)
+- [4644d](https://github.com/ApioIoT/sdk/commit/4644d7a02835ec2d8e118599a0f18d74e6f943ca)  📦 Release 4.0.1 [skip ci]
+- [9cdf3](https://github.com/ApioIoT/sdk/commit/9cdf34126abda986d0697786ea9c61449b8b6bc9)  feat: add support for read and write properties on DeviceType modbus registers
 # 📦 4.0.0 (29 Sep 2025)
 - [4983d](https://github.com/ApioIoT/sdk/commit/4983d31193810494c2b394dde78baa40dced305d)  📦 Release 4.0.0 [skip ci]
 - [e899d](https://github.com/ApioIoT/sdk/commit/e899dab5392e36a8da42100d509d75051fbe5831)  refactor: fix multiproject
