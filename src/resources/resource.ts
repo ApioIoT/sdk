@@ -5,9 +5,9 @@ export type ResourceConfig = Record<string, any>
 
 /**
  * Platform resource.
- * 
+ *
  * @param client Axios Instance
- * 
+ *
  * @template T Request type (es. NewDevice)
  * @template K Response type contains uuid property (es. Device)
  */

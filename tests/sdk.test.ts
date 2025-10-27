@@ -128,7 +128,7 @@ describe('Testing SDK', () => {
 
   test('test Cancellation with abort', async () => {
     const controller = new AbortController()
-    
+   
     const sdk = new Sdk({
       uri: process.env.BASE_URI!,
       authorization: {
