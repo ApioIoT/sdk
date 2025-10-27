@@ -1,12 +1,9 @@
-import { z } from 'zod'
-
 import { KnxNodeProtocol } from './protocols/knx'
 import { LorawanNodeProtocol } from './protocols/lorawan'
 import { ModbusDeviceTypeProtocol, ModbusNodeProtocol } from './protocols/modbus'
 import { HttpPollingNodeProtocol } from './protocols/http-polling'
- 
-const MetadataSchema = z.record(z.string(), z.any())
-type Metadata = z.infer<typeof MetadataSchema>
+
+type Metadata = Record<string, any>
 
 export enum LocationPointTypeEnum {
   Point = 'point'
@@ -103,6 +100,13 @@ export type Node = {
   description: string
   tags: string[]
   rules?: string[]
+  retry?: {
+    enabled: boolean
+    maxRetries: number
+    backoffBase: number
+    backoffFactor: number
+    backoffTimeLimit: number
+  },
   createdAt: Date
   updatedAt: Date
 }
@@ -249,39 +253,46 @@ export type Rule = {
 	cpdatedAt: Date
 }
 
-export const MeasureSchema = z.object({
-  projectId: z.string(),
-  deviceId: z.string(),
-  timestamp: z.number(),
-  name: z.string(),
-  value: z.number()
-})
+export type Measure = {
+  projectId: string
+  deviceId: string
+  timestamp: number
+  name: string
+  value: number
+}
 
-export type Measure = z.infer<typeof MeasureSchema>
+export enum CommandStatus {
+  PENDING = 'pending',
+  RECEIVED = 'received',
+  COMPLETED = 'completed',
+  FAILED = 'failed',
+}
 
-const CommandParametersSchema = z.record(z.string(), z.any())
-
-export type CommandParameters = z.infer<typeof CommandParametersSchema>
-
-export const CommandSchema = z.object({
-  uuid: z.string(),
-  name: z.string(),
-  status: z.enum(['pending', 'received', 'completed', 'failed']),
-  projectId: z.string(),
-  nodeId: z.string().optional(),
-  deviceId: z.string().optional(),
-  parameters: z.array(CommandParametersSchema).or(CommandParametersSchema),
-  metadata: MetadataSchema.optional(),
-  createdAt: z.string().optional(),
-  updatedAt: z.string().optional(),
-  receivedAt: z.string().optional(),
-  completedAt: z.string().optional(),
-  failedAt: z.string().optional()
-})
-
-export type Command = z.infer<typeof CommandSchema>
+export type Command = {
+  uuid: string
+  name: string
+  status: CommandStatus
+  projectId: string
+  nodeId?: string
+  deviceId?: string
+  parameters: Record<string, any> | Record<string, any>[]
+  metadata?: Metadata
+  downlinkRetry?: {
+    maxRetries?: number
+    retryCount?: number
+  }
+  executionRetry?: {
+    maxRetries?: number
+    retryCount?: number
+  }
+  createdAt?: string
+  updatedAt?: string
+  receivedAt?: string
+  completedAt?: string
+  failedAt?: string
+}
 
 export type CommandAck = {
   uuid: string
-  status: 'received' | 'completed' | 'failed'
+  status: CommandStatus
 } & Record<string, any>

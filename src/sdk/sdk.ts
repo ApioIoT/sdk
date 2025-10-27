@@ -4,21 +4,21 @@ import { setupCache } from 'axios-cache-interceptor'
 import Resource from '../resources/resource'
 import BaseResource from '../resources/base'
 
-import { 
-  Asset, 
-  AssetType, 
-  Device, 
-  DeviceType, 
+import {
+  Asset,
+  AssetType,
+  Device,
+  DeviceType,
   NewAsset,
-  NewAssetType, 
-  NewDevice, 
-  NewDeviceType, 
-  NewNode, 
-  NewNodeType, 
-  NewPlant, 
-  Node, 
-  NodeType, 
-  Plant, 
+  NewAssetType,
+  NewDevice,
+  NewDeviceType,
+  NewNode,
+  NewNodeType,
+  NewPlant,
+  Node,
+  NodeType,
+  Plant,
   NewRule,
   Rule
 } from '../types'
@@ -34,7 +34,7 @@ export type Configuration = {
   signal?: GenericAbortSignal
 }
 
-export class Project {
+export class SdkProject {
   public readonly assetType: Resource<NewAssetType, AssetType>
   public readonly asset: Resource<NewAsset, Asset>
   public readonly device: Resource<NewDevice, Device>
@@ -84,9 +84,9 @@ class Sdk {
   }
 
 
-  project(projectId: string): Project {
+  project(projectId: string): SdkProject {
     const client = this.createAxiosClient(projectId)
-    return new Project(client)
+    return new SdkProject(client)
   }
 }
 

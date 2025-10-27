@@ -1,26 +1,24 @@
-import { 
-  Asset, 
-  AssetType, 
-  Command, 
-  Device, 
-  DeviceType, 
-  Node, 
-  NodeType, 
-  Plant, 
-  RuleAction, 
-  RuleCondition, 
-  RuleTrigger 
+import {
+  Asset,
+  AssetType,
+  Device,
+  DeviceType,
+  Node,
+  NodeType,
+  Plant,
+  RuleAction,
+  RuleCondition,
+  RuleTrigger
 } from './response'
 
-type hiddenFields = 'uuid' | 'createdAt' | 'updatedAt'
-
-export type NewAssetType = Omit<AssetType, hiddenFields>
-export type NewAsset = Omit<Asset, hiddenFields>
-export type NewDevice = Omit<Device, hiddenFields>
-export type NewDeviceType = Omit<DeviceType, hiddenFields>
-export type NewNode = Omit<Node, hiddenFields>
-export type NewNodeType = Omit<NodeType, hiddenFields>
-export type NewPlant = Omit<Plant, hiddenFields>
+type resourceHiddenFields = 'uuid' | 'createdAt' | 'updatedAt'
+export type NewAssetType = Omit<AssetType, resourceHiddenFields>
+export type NewAsset = Omit<Asset, resourceHiddenFields>
+export type NewDevice = Omit<Device, resourceHiddenFields>
+export type NewDeviceType = Omit<DeviceType, resourceHiddenFields>
+export type NewNode = Omit<Node, resourceHiddenFields>
+export type NewNodeType = Omit<NodeType, resourceHiddenFields>
+export type NewPlant = Omit<Plant, resourceHiddenFields>
 export type NewRule = {
 	name: string
 	description?: string
@@ -32,5 +30,17 @@ export type NewRule = {
 	elseActions?: RuleAction[]
 }
 
-type commandHiddenFields = 'uuid' | 'status' | 'createdAt' | 'updatedAt' | 'receivedAt' | 'completedAt' | 'failedAt'
-export type NewCommand = Omit<Command, commandHiddenFields>
+export type NewCommand = {
+  name: string
+  projectId: string
+  nodeId?: string
+  deviceId?: string
+  parameters: Record<string, any> | Record<string, any>[]
+  downlinkRetry?: {
+    maxRetries?: number
+  }
+  executionRetry?: {
+    maxRetries?: number
+  }
+  metadata?: Record<string, any>
+}
