@@ -1,3 +1,6 @@
+# 📦 4.1.0 (23 Oct 2025)
+- [f507b](https://github.com/ApioIoT/sdk/commit/f507b745bb462d0e7b6780d3e239dd70acb01259)  📦 Release 4.1.0 [skip ci]
+- [011db](https://github.com/ApioIoT/sdk/commit/011db1a89bd830f159fd5d2b4d0251a7a8878821)  feat: add CommandAck type
 # 📦 4.0.1 (9 Oct 2025)
 - [4644d](https://github.com/ApioIoT/sdk/commit/4644d7a02835ec2d8e118599a0f18d74e6f943ca)  📦 Release 4.0.1 [skip ci]
 - [9cdf3](https://github.com/ApioIoT/sdk/commit/9cdf34126abda986d0697786ea9c61449b8b6bc9)  feat: add support for read and write properties on DeviceType modbus registers
