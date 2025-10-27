@@ -4,7 +4,7 @@ NodeJS SDK for Apio IoT Platform.
 
 ## Installation
 
-```
+```bash
 npm i @apio/sdk
 ```
 
