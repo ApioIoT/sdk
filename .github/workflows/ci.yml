@@ -2,9 +2,8 @@ name: CI
 
 on:
   push:
-    tags:
-      - 'v*.*.*'
-      - 'v*.*.*-*'
+    tags: ['v*']
+
 jobs:
   audit:
     name: Audit
