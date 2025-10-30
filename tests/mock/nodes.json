@@ -1,0 +1,80 @@
+{
+  "status": true,
+  "data": [
+    {
+      "projectId": "my-project-id",
+      "plantId": "6a2e4cdb-a515-407a-8762-84b898768d2a",
+      "name": "mac-gigi",
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          41.893,
+          12.482
+        ],
+        "_id": "6694e5edf733c3b06abc17d7"
+      },
+      "connectivityStatus": "disconnected",
+      "lastConnectionAt": "2025-02-07T11:09:35.792Z",
+      "lastCommunicationAt": "2025-02-07T11:41:36.860Z",
+      "lastDisconnectionAt": "2025-02-07T11:42:30.302Z",
+      "description": "",
+      "uuid": "my-node-id",
+      "metadata": {},
+      "tags": [],
+      "createdAt": "2024-07-15T09:03:41.998Z",
+      "updatedAt": "2025-02-07T11:42:30.310Z",
+      "protocols": [
+        {
+          "uuid": "aa451676-a953-4d86-80d0-d38c5f9407b7",
+          "name": "modbus",
+          "configuration": {
+            "type": "tcp",
+            "ip": "192.168.1.100",
+            "port": 502,
+            "readingFrequency": 10,
+            "cloudFrequency": 3000,
+            "edgeFrequency": "onchange",
+            "mapping": {
+              "a62260a7-8d12-4048-867a-43f704765402": {
+                "address": 1
+              }
+            }
+          },
+          "_id": "67a5ed2fd55ffed936dbd154"
+        },
+        {
+          "uuid": "367feeb0-79c7-461a-a0da-3cae4796db83",
+          "name": "modbus",
+          "metadata": {
+            "enabled": false
+          },
+          "configuration": {
+            "type": "rtu",
+            "port": "/dev/tty.usbserial-AD0JZHMW",
+            "readingFrequency": 50,
+            "cloudFrequency": 3000,
+            "edgeFrequency": "onchange",
+            "baudRate": 57600,
+            "dataBits": 8,
+            "stopBits": 1,
+            "parity": "none",
+            "mapping": {
+              "88cb3de0-306a-4c92-885e-aea454f1ccea": {
+                "address": 1
+              }
+            }
+          },
+          "_id": "66b4ea2c311ba862b72aa556"
+        }
+      ],
+      "activatedAt": "never",
+      "decommissionedAt": "never",
+      "provisionedAt": "never",
+      "rules": [
+        "3ce02bca-57ff-4ce4-8675-bd53f6387b36"
+      ],
+      "suspendedAt": "never",
+      "nodeType": null
+    }
+  ]
+}

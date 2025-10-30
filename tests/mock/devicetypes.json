@@ -1,0 +1,197 @@
+{
+  "status": true,
+  "data": [
+    {
+      "projectId": "my-project-id",
+      "visibility": "project",
+      "model": "SenecaZ-D-IN",
+      "manufacturer": "Seneca",
+      "category": null,
+      "name": "seneca Z-D-IN",
+      "properties": {
+        "input1": {
+          "uom": "-",
+          "description": "Digital Input",
+          "displayName": "Input1",
+          "type": "double",
+          "validation": true,
+          "aggregations": [
+            "delta:quarter",
+            "delta:hourly",
+            "delta:daily"
+          ],
+          "_id": "66b4e9bdfbd4be9c26aa668b"
+        },
+        "input2": {
+          "uom": "-",
+          "description": "Digital Input",
+          "displayName": "Input2",
+          "type": "double",
+          "validation": true,
+          "aggregations": [
+            "delta:quarter",
+            "delta:hourly",
+            "delta:daily"
+          ],
+          "_id": "66b4e9bdfbd4be9c26aa668c"
+        }
+      },
+      "uuid": "my-devicetype-id2",
+      "firmwareVersions": [],
+      "metadata": {},
+      "commands": {},
+      "events": {},
+      "protocols": {
+        "modbus": {
+          "endianness": "CDAB",
+          "registers": [
+            {
+              "read": true,
+              "write": true,
+              "register": 1,
+              "modbusFunction": 3,
+              "words": 1,
+              "bitwiseReading": true,
+              "properties": [
+                {
+                  "index": 0,
+                  "name": "Input1",
+                  "_id": "670922c2ed468a23e1b3fd13"
+                },
+                {
+                  "index": 1,
+                  "name": "Input2",
+                  "_id": "670922c2ed468a23e1b3fd14"
+                }
+              ],
+              "_id": "66b4e9bdfbd4be9c26aa668f"
+            }
+          ],
+          "_id": "66b4e9bdfbd4be9c26aa668e"
+        },
+        "_id": "66b4e973311ba862b72a8bf6"
+      },
+      "createdAt": "2024-08-08T15:51:15.644Z",
+      "updatedAt": "2024-10-11T15:40:13.440Z"
+    },
+    {
+      "projectId": "my-project-id",
+      "visibility": "project",
+      "model": "SenecaZE-4DI",
+      "manufacturer": "Seneca",
+      "category": null,
+      "name": "seneca ZE-4DI",
+      "properties": {
+        "output1": {
+          "uom": "-",
+          "description": "Digital Output",
+          "displayName": "Output1",
+          "type": "integer",
+          "validation": true,
+          "aggregations": [
+            "delta:quarter",
+            "delta:hourly",
+            "delta:daily"
+          ],
+          "_id": "67a5edc242fcc564fe629f2a"
+        },
+        "output2": {
+          "uom": "-",
+          "description": "Digital Output",
+          "displayName": "Output2",
+          "type": "integer",
+          "validation": true,
+          "aggregations": [
+            "delta:quarter",
+            "delta:hourly",
+            "delta:daily"
+          ],
+          "_id": "67a5edc242fcc564fe629f2b"
+        },
+        "analog1": {
+          "uom": "cm",
+          "description": "Livello 1",
+          "displayName": "Analog1",
+          "type": "integer",
+          "validation": true,
+          "aggregations": [
+            "delta:quarter",
+            "delta:hourly",
+            "delta:daily"
+          ],
+          "_id": "67a5edc242fcc564fe629f2c"
+        }
+      },
+      "uuid": "my-devicetype-id",
+      "firmwareVersions": [],
+      "metadata": {},
+      "commands": {},
+      "events": {},
+      "createdAt": "2024-07-15T09:12:12.393Z",
+      "updatedAt": "2025-02-07T11:25:54.744Z",
+      "protocols": {
+        "modbus": {
+          "endianness": "CDAB",
+          "registers": [
+            {
+              "read": true,
+              "write": true,
+              "register": 8,
+              "modbusFunctionRead": 3,
+              "modbusFunctionWrite": 6,
+              "words": 1,
+              "bitwiseReading": false,
+              "properties": [
+                {
+                  "index": 0,
+                  "name": "output1",
+                  "_id": "67a5ecf642fcc564fe62792b"
+                }
+              ],
+              "type": "uint",
+              "_id": "67a5ecf642fcc564fe62792a"
+            },
+            {
+              "read": true,
+              "write": true,
+              "register": 9,
+              "modbusFunctionRead": 3,
+              "modbusFunctionWrite": 6,
+              "words": 1,
+              "bitwiseReading": false,
+              "properties": [
+                {
+                  "index": 0,
+                  "name": "output2",
+                  "_id": "67a5ecf642fcc564fe62792d"
+                }
+              ],
+              "type": "uint",
+              "_id": "67a5ecf642fcc564fe62792c"
+            },
+            {
+              "read": true,
+              "write": true,
+              "register": 4,
+              "modbusFunctionRead": 3,
+              "words": 1,
+              "bitwiseReading": false,
+              "properties": [
+                {
+                  "index": 0,
+                  "name": "analog1",
+                  "_id": "67a5ecf642fcc564fe62792f"
+                }
+              ],
+              "type": "int",
+              "_id": "67a5ecf642fcc564fe62792e"
+            }
+          ],
+          "_id": "67a5ecf642fcc564fe627929"
+        },
+        "_id": "67a5ecf642fcc564fe627928"
+      },
+      "encoder": "GenericModbus1"
+    }
+  ]
+}

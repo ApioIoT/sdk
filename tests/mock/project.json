@@ -1,0 +1,14 @@
+{
+  "status": true,
+  "data": {
+    "name": "edge-development",
+    "description": "",
+    "metadata": {
+      "type": "custom"
+    },
+    "uuid": "my-project-id",
+    "createdAt": "2024-07-15T08:59:37.461Z",
+    "updatedAt": "2024-07-15T08:59:37.461Z",
+    "features": []
+  }
+}

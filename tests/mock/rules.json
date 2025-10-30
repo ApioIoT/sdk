@@ -1,0 +1,65 @@
+{
+  "status": true,
+  "data": [
+    {
+      "projectId": "my-project-id",
+      "name": "test",
+      "description": "",
+      "tags": [],
+      "status": "enabled",
+      "allowConcurrent": false,
+      "mode": "edge",
+      "triggers": [
+        {
+          "type": "telemetry",
+          "deviceId": "a62260a7-8d12-4048-867a-43f704765402",
+          "property": "output1",
+          "_id": "67a5ee02d55ffed936dc2134"
+        }
+      ],
+      "actions": [
+        {
+          "_id": "6901ec8e935be374a1286c87",
+          "type": "command",
+          "command": {
+            "deviceId": "a62260a7-8d12-4048-867a-43f704765402",
+            "name": "set",
+            "parameters": {
+              "property": "output2",
+              "value": 0
+            },
+            "projectId": "eba6b024-f3c3-4adf-aaa5-15f0fe172a4e"
+          },
+          "deviceId": "a62260a7-8d12-4048-867a-43f704765402"
+        }
+      ],
+      "uuid": "my-rule-id",
+      "metadata": {},
+      "createdAt": "2025-02-07T11:24:19.319Z",
+      "updatedAt": "2025-02-07T11:26:58.254Z",
+      "condition": {
+        "devices": {
+          "device": "a62260a7-8d12-4048-867a-43f704765402"
+        },
+        "condition": "device.output1 == 0",
+        "_id": "6901ec8e935be374a1286c88"
+      },
+      "elseActions": [
+        {
+          "_id": "6901ec8e935be374a1286c89",
+          "type": "command",
+          "command": {
+            "deviceId": "a62260a7-8d12-4048-867a-43f704765402",
+            "name": "set",
+            "parameters": {
+              "property": "output2",
+              "value": 1
+            },
+            "projectId": "eba6b024-f3c3-4adf-aaa5-15f0fe172a4e"
+          },
+          "deviceId": "a62260a7-8d12-4048-867a-43f704765402"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,240 @@
+{
+  "status": true,
+  "data": [
+    {
+      "projectId": "my-project-id",
+      "deviceTypeId": "9e1c6230-1ae5-44d9-b087-b52646aed689",
+      "nodeId": "my-node-id",
+      "plantId": "6a2e4cdb-a515-407a-8762-84b898768d2a",
+      "name": "seneca ze-4di",
+      "state": {},
+      "lastActivityAt": "never",
+      "lastCommunicationAt": "never",
+      "connectivityStatus": "disconnected",
+      "lastConnectionAt": "never",
+      "lastDisconnectionAt": "never",
+      "uuid": "my-device-id",
+      "metadata": {},
+      "stateUpdatedAt": {},
+      "tags": [],
+      "createdAt": "2024-07-15T09:13:28.117Z",
+      "updatedAt": "2024-08-14T12:43:38.224Z",
+      "encoder": "GenericModbus1",
+      "deviceType": {
+        "_id": "6694e7ec2f3f95889e046efd",
+        "projectId": "eba6b024-f3c3-4adf-aaa5-15f0fe172a4e",
+        "visibility": "project",
+        "model": "SenecaZE-4DI",
+        "manufacturer": "Seneca",
+        "category": null,
+        "name": "seneca ZE-4DI",
+        "properties": {
+          "output1": {
+            "uom": "-",
+            "description": "Digital Output",
+            "displayName": "Output1",
+            "type": "integer",
+            "validation": true,
+            "aggregations": [
+              "delta:quarter",
+              "delta:hourly",
+              "delta:daily"
+            ],
+            "_id": "67a5edc242fcc564fe629f2a"
+          },
+          "output2": {
+            "uom": "-",
+            "description": "Digital Output",
+            "displayName": "Output2",
+            "type": "integer",
+            "validation": true,
+            "aggregations": [
+              "delta:quarter",
+              "delta:hourly",
+              "delta:daily"
+            ],
+            "_id": "67a5edc242fcc564fe629f2b"
+          },
+          "analog1": {
+            "uom": "cm",
+            "description": "Livello 1",
+            "displayName": "Analog1",
+            "type": "integer",
+            "validation": true,
+            "aggregations": [
+              "delta:quarter",
+              "delta:hourly",
+              "delta:daily"
+            ],
+            "_id": "67a5edc242fcc564fe629f2c"
+          }
+        },
+        "uuid": "9e1c6230-1ae5-44d9-b087-b52646aed689",
+        "firmwareVersions": [],
+        "metadata": {},
+        "commands": {},
+        "events": {},
+        "createdAt": "2024-07-15T09:12:12.393Z",
+        "updatedAt": "2025-02-07T11:25:54.744Z",
+        "__v": 0,
+        "protocols": {
+          "modbus": {
+            "endianness": "CDAB",
+            "registers": [
+              {
+                "register": 8,
+                "modbusFunctionRead": 3,
+                "modbusFunctionWrite": 6,
+                "words": 1,
+                "bitwiseReading": false,
+                "properties": [
+                  {
+                    "index": 0,
+                    "name": "output1",
+                    "_id": "67a5ecf642fcc564fe62792b"
+                  }
+                ],
+                "type": "uint",
+                "_id": "67a5ecf642fcc564fe62792a"
+              },
+              {
+                "register": 9,
+                "modbusFunctionRead": 3,
+                "modbusFunctionWrite": 6,
+                "words": 1,
+                "bitwiseReading": false,
+                "properties": [
+                  {
+                    "index": 0,
+                    "name": "output2",
+                    "_id": "67a5ecf642fcc564fe62792d"
+                  }
+                ],
+                "type": "uint",
+                "_id": "67a5ecf642fcc564fe62792c"
+              },
+              {
+                "register": 4,
+                "modbusFunctionRead": 3,
+                "words": 1,
+                "bitwiseReading": false,
+                "properties": [
+                  {
+                    "index": 0,
+                    "name": "analog1",
+                    "_id": "67a5ecf642fcc564fe62792f"
+                  }
+                ],
+                "type": "int",
+                "_id": "67a5ecf642fcc564fe62792e"
+              }
+            ],
+            "_id": "67a5ecf642fcc564fe627929"
+          },
+          "_id": "67a5ecf642fcc564fe627928"
+        },
+        "encoder": "GenericModbus1"
+      }
+    },
+    {
+      "projectId": "my-project-id",
+      "deviceTypeId": "7d123bd5-1106-43b3-942d-b2d1a25b2827",
+      "nodeId": "my-node-id",
+      "plantId": "6a2e4cdb-a515-407a-8762-84b898768d2a",
+      "name": "seneca z-d-in",
+      "state": {
+        "name": "register_1_4",
+        "projectId": "eba6b024-f3c3-4adf-aaa5-15f0fe172a4e",
+        "value": 0
+      },
+      "lastActivityAt": "+056576-05-05T09:27:59.181Z",
+      "lastCommunicationAt": "+056576-05-05T09:27:59.181Z",
+      "connectivityStatus": "disconnected",
+      "lastConnectionAt": "never",
+      "lastDisconnectionAt": "never",
+      "uuid": "my-device-id2",
+      "metadata": {},
+      "stateUpdatedAt": {
+        "name": "+056576-05-05T09:27:59.181Z",
+        "projectId": 1723209758879181,
+        "value": "+056576-05-05T09:27:59.181Z"
+      },
+      "tags": [],
+      "createdAt": "2024-08-08T15:53:00.458Z",
+      "updatedAt": "2024-08-09T13:23:23.659Z",
+      "deviceType": {
+        "_id": "66b4e973311ba862b72a8bf5",
+        "projectId": "eba6b024-f3c3-4adf-aaa5-15f0fe172a4e",
+        "visibility": "project",
+        "model": "SenecaZ-D-IN",
+        "manufacturer": "Seneca",
+        "category": null,
+        "name": "seneca Z-D-IN",
+        "properties": {
+          "input1": {
+            "uom": "-",
+            "description": "Digital Input",
+            "displayName": "Input1",
+            "type": "double",
+            "validation": true,
+            "aggregations": [
+              "delta:quarter",
+              "delta:hourly",
+              "delta:daily"
+            ],
+            "_id": "66b4e9bdfbd4be9c26aa668b"
+          },
+          "input2": {
+            "uom": "-",
+            "description": "Digital Input",
+            "displayName": "Input2",
+            "type": "double",
+            "validation": true,
+            "aggregations": [
+              "delta:quarter",
+              "delta:hourly",
+              "delta:daily"
+            ],
+            "_id": "66b4e9bdfbd4be9c26aa668c"
+          }
+        },
+        "uuid": "7d123bd5-1106-43b3-942d-b2d1a25b2827",
+        "firmwareVersions": [],
+        "metadata": {},
+        "commands": {},
+        "events": {},
+        "protocols": {
+          "modbus": {
+            "endianness": "CDAB",
+            "registers": [
+              {
+                "register": 1,
+                "modbusFunction": 3,
+                "words": 1,
+                "bitwiseReading": true,
+                "properties": [
+                  {
+                    "index": 0,
+                    "name": "Input1",
+                    "_id": "670922c2ed468a23e1b3fd13"
+                  },
+                  {
+                    "index": 1,
+                    "name": "Input2",
+                    "_id": "670922c2ed468a23e1b3fd14"
+                  }
+                ],
+                "_id": "66b4e9bdfbd4be9c26aa668f"
+              }
+            ],
+            "_id": "66b4e9bdfbd4be9c26aa668e"
+          },
+          "_id": "66b4e973311ba862b72a8bf6"
+        },
+        "createdAt": "2024-08-08T15:51:15.644Z",
+        "updatedAt": "2024-10-11T15:40:13.440Z",
+        "__v": 0
+      }
+    }
+  ]
+}
