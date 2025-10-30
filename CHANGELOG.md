@@ -1,3 +1,9 @@
+# 📦 5.0.0 (27 Oct 2025)
+- [4dafd](https://github.com/ApioIoT/sdk/commit/4dafd828f450ecfcd165c70c4022daeaa5e126f0)  📦 Release 5.0.0-beta.0 [skip ci]
+- [c2b7c](https://github.com/ApioIoT/sdk/commit/c2b7ceffff4b713145726b03522caa2497de0277)  refactor: improve release script
+- [490ac](https://github.com/ApioIoT/sdk/commit/490acef42be5b68f9643eb3633bb50bc02f82a1f)  refactor: extends command for retry, removed zod and validator, removed test from dist
+- [08319](https://github.com/ApioIoT/sdk/commit/08319685a7da8ef6bf8d5f1f2b84fef9e3d4802e)  chore: fix doc
+- [b1f62](https://github.com/ApioIoT/sdk/commit/b1f621c801a19a4981b6d6704a1b6f141927441f)  chore: clean code
 # 📦 4.1.0 (23 Oct 2025)
 - [f507b](https://github.com/ApioIoT/sdk/commit/f507b745bb462d0e7b6780d3e239dd70acb01259)  📦 Release 4.1.0 [skip ci]
 - [011db](https://github.com/ApioIoT/sdk/commit/011db1a89bd830f159fd5d2b4d0251a7a8878821)  feat: add CommandAck type
