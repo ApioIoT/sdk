@@ -29,7 +29,7 @@ export type Configuration = {
     type: 'apiKey' | 'Bearer',
     secret: string
   },
-  cache?: boolean | { ttl: number },
+  cache?: boolean,
   timeout?: number,
   signal?: GenericAbortSignal
 }
@@ -59,7 +59,7 @@ export class SdkProject {
 class Sdk {
   constructor(private readonly configuration: Configuration) {}
 
-  private createAxiosClient(projectId: string): AxiosInstance {
+  private createClient(projectId: string): AxiosInstance {
     const headers: Record<string, string> = {}
 
     const { authorization } = this.configuration
@@ -77,15 +77,14 @@ class Sdk {
     })
 
     if (this.configuration.cache) {
-      return setupCache(client, typeof this.configuration.cache === 'object' ? this.configuration.cache : undefined)
+      return setupCache(client)
     }
-
     return client
   }
 
 
   project(projectId: string): SdkProject {
-    const client = this.createAxiosClient(projectId)
+    const client = this.createClient(projectId)
     return new SdkProject(client)
   }
 }
