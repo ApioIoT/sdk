@@ -280,6 +280,7 @@ export type Command = {
   downlinkRetry?: {
     maxRetries?: number
     retryCount?: number
+    nextRetryAt?: string
   }
   executionRetry?: {
     maxRetries?: number
