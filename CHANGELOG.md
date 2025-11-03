@@ -1,4 +1,10 @@
-# 📦 5.0.0 (27 Oct 2025)
+# 📦 5.0.0 (30 Oct 2025)
+- [32a89](https://github.com/ApioIoT/sdk/commit/32a89d11c7c95f346f7dfad579edc15cb80b5661)  📦 Release 5.0.0-rc.0 [skip ci]
+- [b0a64](https://github.com/ApioIoT/sdk/commit/b0a64ee487e84ddebdff05a582ea6ea330bbe23a)  chore: clean code
+- [bd9e6](https://github.com/ApioIoT/sdk/commit/bd9e66d16a5dfa97612abbdafc298d9f22ce1a2e)  refactor: simplify cache configuration and method naming in Sdk class
+- [06429](https://github.com/ApioIoT/sdk/commit/06429fd57f87351726f96632411dc9e43a6a6896)  feat: add github CI
+- [e5c62](https://github.com/ApioIoT/sdk/commit/e5c62306e85c612ccd23c47e19650629bc71fa59)  chore: package update
+- [b33ce](https://github.com/ApioIoT/sdk/commit/b33ceb80178a2c88d99b4b252e5fdab89377470b)  refactor: use nock and node:test instead real api and jest
 - [4dafd](https://github.com/ApioIoT/sdk/commit/4dafd828f450ecfcd165c70c4022daeaa5e126f0)  📦 Release 5.0.0-beta.0 [skip ci]
 - [c2b7c](https://github.com/ApioIoT/sdk/commit/c2b7ceffff4b713145726b03522caa2497de0277)  refactor: improve release script
 - [490ac](https://github.com/ApioIoT/sdk/commit/490acef42be5b68f9643eb3633bb50bc02f82a1f)  refactor: extends command for retry, removed zod and validator, removed test from dist
