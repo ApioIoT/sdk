@@ -111,6 +111,11 @@ echo ""
 echo "🧪 Procedo con i test..."
 echo ""
 
+npm audit 
+if [ $? -ne 0 ]; then
+  echo "🟡 Audit fallito!"
+fi
+
 npm run lint 
 if [ $? -ne 0 ]; then
   echo "❌ Lint fallito!"
@@ -118,7 +123,7 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-npm run test
+npm test
 if [ $? -ne 0 ]; then
   echo "❌ Test fallito!"
   rollback
