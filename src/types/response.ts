@@ -198,31 +198,45 @@ export type NodeType = {
   firmwareVersions?: any[]
 }
 
+export enum RuleActionType {
+  Log = 'log',
+  Command = 'command',
+  Webhook = 'webhook',
+  Wasm = 'wasm',
+  Delay = 'delay'
+}
+
 export type RuleAction = {
-  type: 'log'
+  type: RuleActionType.Log
 	value: string
 } | {
-  type: 'command'
+  type: RuleActionType.Command
   command: Record<string, any>
   deviceId: string
 } | {
-  type: 'webhook'
+  type: RuleActionType.Webhook
   uri: string
   payload: string
 } | {
-  type: 'wasm'
+  type: RuleActionType.Wasm
   label?: string
   language: 'as'
   source: string
   binary?: string
-  hash: string
+  hash?: string
 } | {
-  type: 'delay'
+  type: RuleActionType.Delay
   time: number
 }
 
+export enum RuleTriggerType {
+  Telemetry = 'telemetry',
+  Cron = 'cron',
+  Event = 'event'
+}
+
 export type RuleTrigger = {
-	type: 'telemetry' | 'cron' | 'event'
+	type: RuleTriggerType
 	deviceId?: string
 	property?: string
 	crontab?:  string
@@ -235,13 +249,25 @@ export type RuleCondition = {
   deadline?: number
 }
 
+export enum RuleMode {
+  Cloud = 'cloud',
+  Edge = 'edge'
+}
+
+export enum RuleStatus {
+  Enabled = 'enabled',
+  Pending = 'pending',
+  Rejected = 'rejected',
+  Disabled = 'disabled'
+}
+
 export type Rule = {
 	uuid: string
 	name: string
 	description?: string
 	tags?: string[]
-	mode:  'cloud' | 'edge'
-  status: 'enabled' | 'pending' | 'rejected' | 'disabled'
+	mode:  RuleMode
+  status: RuleStatus
   metadata?: Metadata
 	projectId: string
   allowConcurrent: boolean
@@ -250,7 +276,7 @@ export type Rule = {
 	actions: RuleAction[]
 	elseActions?: RuleAction[]
 	createdAt: Date
-	cpdatedAt: Date
+  updatedAt: Date
 }
 
 export type Measure = {
@@ -262,10 +288,10 @@ export type Measure = {
 }
 
 export enum CommandStatus {
-  PENDING = 'pending',
-  RECEIVED = 'received',
-  COMPLETED = 'completed',
-  FAILED = 'failed',
+  Pending = 'pending',
+  Received = 'received',
+  Completed = 'completed',
+  Failed = 'failed',
 }
 
 export type Command = {
