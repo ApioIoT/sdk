@@ -1,4 +1,8 @@
-# 📦 5.0.0 (30 Oct 2025)
+# 📦 5.0.0 (3 Nov 2025)
+- [c0602](https://github.com/ApioIoT/sdk/commit/c0602306c4b384070b79a9d7f6baf89dc1674b9c)  📦 Release 5.0.0-rc.1 [skip ci]
+- [ffafa](https://github.com/ApioIoT/sdk/commit/ffafa9864590fc4e239a79c88720e80571f81369)  chore: add npm audit check before linting and testing in release script
+- [09c8e](https://github.com/ApioIoT/sdk/commit/09c8e9befff2dd5c53a5df10af49ffa328fd2d5d)  feat: add nextRetryAt field to downlinkRetry in Command type
+- [c088b](https://github.com/ApioIoT/sdk/commit/c088b1ba66193d22c8ec178ab447fb1332d4cb0d)  chore: fix github workflow
 - [32a89](https://github.com/ApioIoT/sdk/commit/32a89d11c7c95f346f7dfad579edc15cb80b5661)  📦 Release 5.0.0-rc.0 [skip ci]
 - [b0a64](https://github.com/ApioIoT/sdk/commit/b0a64ee487e84ddebdff05a582ea6ea330bbe23a)  chore: clean code
 - [bd9e6](https://github.com/ApioIoT/sdk/commit/bd9e66d16a5dfa97612abbdafc298d9f22ce1a2e)  refactor: simplify cache configuration and method naming in Sdk class
