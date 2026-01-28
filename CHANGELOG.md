@@ -1,4 +1,6 @@
-# 📦 5.0.0 (3 Nov 2025)
+# 📦 5.0.0 (17 Nov 2025)
+- [1843e](https://github.com/ApioIoT/sdk/commit/1843ea79812b825de51a1106e886a84965afd350)  📦 Release 5.0.0-rc.2 [skip ci]
+- [42c69](https://github.com/ApioIoT/sdk/commit/42c69404d6aff0cd91cf58fdc12ac7a2f5094da4)  refactor: rule bug fix and audit fix
 - [c0602](https://github.com/ApioIoT/sdk/commit/c0602306c4b384070b79a9d7f6baf89dc1674b9c)  📦 Release 5.0.0-rc.1 [skip ci]
 - [ffafa](https://github.com/ApioIoT/sdk/commit/ffafa9864590fc4e239a79c88720e80571f81369)  chore: add npm audit check before linting and testing in release script
 - [09c8e](https://github.com/ApioIoT/sdk/commit/09c8e9befff2dd5c53a5df10af49ffa328fd2d5d)  feat: add nextRetryAt field to downlinkRetry in Command type
